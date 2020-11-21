@@ -4,7 +4,10 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Product;
+use App\Models\ProductModel;
 use App\Service\ProductService;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -32,10 +35,35 @@ class ProductController extends Controller
         return redirect()->route('admin.show');
     }
 
-    public function edit($id)
+    public function showById($id)
     {
         $product = $this->findById($id);
         return view('admin.edit', compact('product'));
+    }
+
+    public function edit(Request $request)
+    {
+        $productId = $request->productId;
+        $productName = $request->productName;
+        $productType = $request->productType;
+        $productColor = $request->productColor;
+        $productPrice = $request->productPrice;
+        $product = new ProductModel($productId ,$productName, $productType, $productColor, $productPrice);
+        $this->productController->editService($product);
+        return redirect()->route('admin.show');
+
+    }
+
+    public function showFormAdd()
+    {
+        return view('admin.add');
+    }
+
+    public function add(Request $request)
+    {
+        $data = $request->all();
+        $this->productController->addService($data);
+        return redirect()->route('admin.show');
     }
 
     public function showUser()

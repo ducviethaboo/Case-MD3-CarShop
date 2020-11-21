@@ -1,7 +1,7 @@
 @extends('admin.core.master')
 @section('content')
     <div class="container">
-        <h1>Sửa thông tin sản phẩm</h1>
+        <h1>Thêm sản phẩm vào kho</h1>
         <hr>
         <div class="row">
             <!-- left column -->
@@ -19,37 +19,36 @@
             <div class="col-md-9 personal-info">
 
                 <h3>Thông tin sản phẩm</h3>
-                <form action="{{route('admin.edit')}}" method="post" class="form-horizontal" role="form">
+                <form action="{{route('admin.add')}}" method="post" class="form-horizontal" role="form">
                     @csrf
-                    <input type="hidden" name="productId" value="{{$product->id}}">
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Tên sản phẩm:</label>
                         <div class="col-lg-8">
-                            <input class="form-control" name="productName" type="text" value="{{$product->productName}}">
+                            <input class="form-control" name="productName" type="text">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Loại xe:</label>
                         <div class="col-lg-8">
-                            <input class="form-control" type="text" name="productType" value="{{$product->productType}}">
+                            <input class="form-control" type="text" name="productType">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Màu sắc:</label>
                         <div class="col-lg-8">
-                            <input class="form-control" type="text" name="productColor" value="{{$product->productColor}}">
+                            <input class="form-control" type="text" name="productColor">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Giá sản phẩm:</label>
                         <div class="col-lg-8">
-                            <input class="form-control" type="text" name="productPrice" value="{{$product->productPrice}}">
+                            <input class="form-control" type="text" name="productPrice">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label"></label>
                         <div class="col-md-8">
-                            <input type="submit" class="btn btn-primary" value="Lưu thay đổi">
+                            <input type="submit" class="btn btn-primary" value="Thêm sản phẩm vào kho">
                             <a href="{{route('admin.show')}}">Huỷ bỏ</a>
                             <span></span>
                         </div>
@@ -58,5 +57,5 @@
             </div>
         </div>
     </div>
-    <hr>
+
 @endsection

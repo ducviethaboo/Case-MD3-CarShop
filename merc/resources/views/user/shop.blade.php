@@ -10,7 +10,7 @@
                             <div class="shop_desc">
                                 <h3><a href="#">{{$product->productName}}</a></h3>
                                 <p>Lorem ipsum consectetuer adipiscing </p>
-                                <span class="actual">{{ number_format($product->productPrice,0,'.',',')}}</span><br>
+                                <span class="actual">{{$product->productPrice}}</span><br>
                                 <ul class="buttons">
                                     <li class="cart"><a href="#">Add To Cart</a></li>
                                     <li class="shop_btn"><a href="#">Read More</a></li>

@@ -28,4 +28,14 @@ class ProductService
     {
         $this->productService->deleteByIdRepo($id);
     }
+
+    public function editService($product)
+    {
+        $this->productService->edit($product);
+    }
+
+    public function addService($data)
+    {
+        $this->productService->add($data);
+    }
 }

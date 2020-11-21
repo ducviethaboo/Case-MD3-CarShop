@@ -15,10 +15,10 @@ class ProductSeeder extends Seeder
     public function run()
     {
         $product = new Product();
-        $product->productName = "S650L";
-        $product->productType = "Sedan";
-        $product->productColor = "yellow";
-        $product->productPrice = "100003030303030";
+        $product->productName = "ssdsd";
+        $product->productType = "sad";
+        $product->productColor = "yelsdsadlow";
+        $product->productPrice = "1000sdsd03030303030";
         $product->save();
     }
 }

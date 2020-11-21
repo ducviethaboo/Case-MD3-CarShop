@@ -29,7 +29,7 @@
                                 <td>{{$product->productColor}}</td>
                                 <td>{{$product->productPrice}}</td>
                                 <td><a href="{{route('admin.delete',['id' => $product->id])}}">Xoá</a> |
-                                    <a href="{{route('admin.edit', ['id' => $product->id])}}">Sửa</a>
+                                    <a href="{{route('admin.showById', ['id' => $product->id])}}">Sửa</a>
                                 </td>
                             </tr>
                         @endforeach

@@ -27,7 +27,10 @@ Route::prefix('user')->group(function (){
 Route::prefix('admin')->group(function (){
     Route::get('/',[ProductController::class,'showAdmin'])->name('admin.show');
     Route::get('/{id?}/delete', [ProductController::class,'delete'])->name('admin.delete');
-    Route::get('/{id?}/edit', [ProductController::class,'edit'])->name('admin.edit');
+    Route::get('/{id?}/edit', [ProductController::class,'showById'])->name('admin.showById');
+    Route::post('/edit', [ProductController::class,'edit'])->name('admin.edit');
+    Route::get('/add', [ProductController::class,'showFormAdd'])->name('admin.showFormAdd');
+    Route::post('/add', [ProductController::class,'add'])->name('admin.add');
 });
 
 
