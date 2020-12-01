@@ -34,8 +34,8 @@ class ProductService
         $this->productService->edit($product);
     }
 
-    public function addService($data)
-    {
-        $this->productService->add($data);
-    }
+//    public function addService($data)
+//    {
+//        $this->productService->add($data);
+//    }
 }

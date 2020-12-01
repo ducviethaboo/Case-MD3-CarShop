@@ -20,19 +20,167 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ae4bc3b-a2de-4f65-af9d-27569f3f9d88" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/merc/app/Models/ProductModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/merc/resources/views/admin/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/app/Http/Controllers/AccountController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/app/Http/Controllers/CartController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/app/Http/Controllers/LoadPage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/app/Http/Requests/RegisterRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/app/Models/Cart.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/app/Repository/AccountRepo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/app/Service/AccountService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/database/migrations/2020_11_25_135714_add_column_productimg_to_products.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/database/migrations/2020_11_26_093839_add_column_product_desc_to_products.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/database/migrations/2020_11_29_021439_create_table__customer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/database/migrations/2020_11_29_021818_create_table_order.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/database/migrations/2020_12_01_063252_add_column_role_to_users.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/database/seeders/UserSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/assets/demo/chart-area-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/assets/demo/chart-bar-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/assets/demo/chart-pie-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/assets/demo/datatables-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/assets/img/error-404-monochrome.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/1606375614.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/1606375894.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606376556.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606376834.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606377036.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606377247.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606377274.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606377362.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606380372.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606380522.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606380559.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606383934.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606384095.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606384115.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606384235.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606384930.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606384960.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606385093.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606385227.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606385450.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606385606.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606385704.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606743041.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606743069.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606743085.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606743100.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606743115.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606743128.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606785010.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/images/user-img/1606815560.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/js/scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/scripts/build-assets.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/scripts/build-pug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/scripts/build-scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/scripts/build-scss.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/scripts/clean.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/scripts/render-assets.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/scripts/render-pug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/scripts/render-scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/scripts/render-scss.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/scripts/sb-watch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/scripts/start-debug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/scripts/start.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/assets/demo/chart-area-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/assets/demo/chart-bar-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/assets/demo/chart-pie-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/assets/demo/datatables-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/assets/img/error-404-monochrome.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/js/scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/layouts/authentication.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/layouts/dashboard.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/layouts/error.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/layouts/includes/footer.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/layouts/includes/head/css.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/layouts/includes/head/icons.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/layouts/includes/head/meta.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/layouts/includes/head/title.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/layouts/includes/navigation/sidenav.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/layouts/includes/navigation/topnav.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/layouts/includes/scripts.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/pages/401.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/pages/404.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/pages/500.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/pages/charts.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/pages/includes/datatable.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/pages/includes/page-header.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/pages/index.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/pages/layout-sidenav-light.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/pages/layout-static.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/pages/login.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/pages/password.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/pages/register.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/pug/pages/tables.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/scss/_global.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/scss/layout/_authentication.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/scss/layout/_dashboard-default.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/scss/layout/_dashboard-fixed.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/scss/layout/_error.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/scss/navigation/_nav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/scss/navigation/_topnav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/scss/navigation/sidenav/_sidenav-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/scss/navigation/sidenav/_sidenav-light.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/scss/navigation/sidenav/_sidenav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/scss/styles.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/scss/variables/_navigation.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/public/src/scss/variables/_spacing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/resources/views/admin/account.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/resources/views/admin/edit-account.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/resources/views/home.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/resources/views/user/cart.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/resources/views/user/merc.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/resources/views/user/productdetail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/resources/views/user/register.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/merc/resources/views/user/test-drive-register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/car_shop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/car_shop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/app/Http/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/app/Http/Controllers/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/merc/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/app/Http/Middleware/CheckLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/app/Http/Middleware/CheckLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/merc/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/app/Models/ProductModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/app/Models/ProductModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/app/Providers/AuthServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/merc/app/Repository/ProductRepo.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/app/Repository/ProductRepo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/merc/app/Service/ProductService.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/app/Service/ProductService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/merc/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/merc/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/merc/database/seeders/ProductSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/database/seeders/ProductSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/merc/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/merctemplete/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/merc/merctemplete/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/merctemplete/css/etalage.css" beforeDir="false" afterPath="$PROJECT_DIR$/merc/merctemplete/css/etalage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/merctemplete/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/merc/merctemplete/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/public/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/merc/public/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/public/images/user-img/G63-2.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/merc/public/images/user-img/G63-2.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/public/images/user-img/G63-3.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/merc/public/images/user-img/G63-3.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/public/images/user-img/G63-4.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/merc/public/images/user-img/G63-4.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/public/images/user-img/G63-5.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/merc/public/images/user-img/G63-5.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/public/images/user-img/G63-6.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/merc/public/images/user-img/G63-6.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/public/images/user-img/G63-7.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/merc/public/images/user-img/G63-7.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/public/images/user-img/G63-8.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/merc/public/images/user-img/G63-8.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/public/images/user-img/G63.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/merc/public/images/user-img/G63.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/public/images/user-img/GLC.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/merc/public/images/user-img/GLC.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/public/images/user-img/GT.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/merc/public/images/user-img/GT.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/public/images/user-img/Maybach1.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/merc/public/images/user-img/Maybach1.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/public/images/user-img/coupe.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/merc/public/images/user-img/coupe.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/public/images/user-img/s600.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/merc/public/images/user-img/s600.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/resources/views/admin/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/resources/views/admin/add.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/merc/resources/views/admin/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/resources/views/admin/admin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/merc/resources/views/admin/core/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/resources/views/admin/core/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/merc/resources/views/admin/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/resources/views/admin/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/resources/views/core/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/resources/views/core/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/resources/views/core/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/resources/views/core/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/resources/views/core/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/resources/views/core/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/resources/views/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/resources/views/user/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/merc/resources/views/user/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/resources/views/user/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/merc/resources/views/user/shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/resources/views/user/shop.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/merc/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/merc/routes/web.php" afterDir="false" />
     </list>
@@ -45,8 +193,16 @@
     <pharConfigPath>$PROJECT_DIR$/merc/composer.json</pharConfigPath>
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -155,31 +311,38 @@
       <path value="$PROJECT_DIR$/merc/vendor/fakerphp/faker" />
       <path value="$PROJECT_DIR$/merc/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/merc/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/merc/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kaGg1ZpTjXNcLCM9HUzQ2PoPnl" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/merc/public" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/merc/public/images/user-img" />
+      <recent name="$PROJECT_DIR$/merc/resources/views/admin" />
+      <recent name="$PROJECT_DIR$/merc/public/images/home-page" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/merc/public" />
+      <recent name="$PROJECT_DIR$/merc/public/intro" />
       <recent name="$PROJECT_DIR$/merc/public/admin-page" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/merc/resources/views/admin" />
-      <recent name="$PROJECT_DIR$/merc/public/images/user-img" />
-      <recent name="$PROJECT_DIR$/merc/public/images/home-page" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -198,7 +361,21 @@
       <workItem from="1605938886030" duration="2837000" />
       <workItem from="1605941822017" duration="9961000" />
       <workItem from="1605961500673" duration="4482000" />
-      <workItem from="1605966410502" duration="4553000" />
+      <workItem from="1605966410502" duration="13060000" />
+      <workItem from="1606202131877" duration="21000" />
+      <workItem from="1606203599909" duration="75000" />
+      <workItem from="1606208620777" duration="582000" />
+      <workItem from="1606209305400" duration="1294000" />
+      <workItem from="1606210840174" duration="4000" />
+      <workItem from="1606210898828" duration="33000" />
+      <workItem from="1606210957551" duration="45000" />
+      <workItem from="1606211287541" duration="2017000" />
+      <workItem from="1606308750657" duration="16277000" />
+      <workItem from="1606379823645" duration="11040000" />
+      <workItem from="1606484631934" duration="16915000" />
+      <workItem from="1606709782092" duration="67000" />
+      <workItem from="1606726490104" duration="39000" />
+      <workItem from="1606739933355" duration="21043000" />
     </task>
     <servers />
   </component>
@@ -215,23 +392,47 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="505" y="173" key="#com.intellij.ide.util.MemberChooser" timestamp="1605969478206">
+    <state x="505" y="173" key="#com.intellij.ide.util.MemberChooser" timestamp="1606383811542">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="505" y="173" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1605969478206" />
-    <state x="460" y="183" key="NewPhpClassDialog" timestamp="1605968580479">
+    <state x="505" y="173" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1606383811542" />
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606654791083">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="460" y="183" key="NewPhpClassDialog/0.0.1440.900@0.0.1440.900" timestamp="1605968580479" />
-    <state x="539" y="380" key="NewPhpFileDialog" timestamp="1605969999100">
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1606654791083" />
+    <state x="297" y="25" key="CommitChangelistDialog2" timestamp="1606309569548">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="539" y="380" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1605969999100" />
-    <state x="221" y="89" key="SettingsEditor" timestamp="1605932621120">
+    <state x="297" y="25" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1606309569548" />
+    <state x="460" y="183" key="NewPhpClassDialog" timestamp="1606817270191">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1605932621120" />
+    <state x="460" y="183" key="NewPhpClassDialog/0.0.1440.900@0.0.1440.900" timestamp="1606817270191" />
+    <state x="539" y="380" key="NewPhpFileDialog" timestamp="1606829518752">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="539" y="380" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1606829518752" />
+    <state x="414" y="177" key="RollbackChangesDialog" timestamp="1606811627829">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="414" y="177" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1606811627829" />
+    <state x="221" y="89" key="SettingsEditor" timestamp="1606458319902">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1606458319902" />
+    <state x="385" y="210" key="run.anything.popup" timestamp="1606785033144">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1606785033144" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1606788178585">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1606788178585" />
   </component>
 </project>

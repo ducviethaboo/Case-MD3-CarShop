@@ -50,10 +50,10 @@
             </div>
         </div>
     </div>
-
+<hr>
     <div class="features">
         <div class="container">
-            <h3 class="m_3">Các dòng nổi bật</h3>
+            <h3 class="m_3">Các dòng xe nổi bật</h3>
             <div class="row">
                 <div class="col-md-3 top_box">
                     <div class="view view-ninth"><a href="single.html">
@@ -72,7 +72,7 @@
                 </div>
                 <div class="col-md-3 top_box">
                     <div class="view view-ninth"><a href="single.html">
-                            <img src="{{asset('images/user-img/G63-8.jpeg')}}" class="img-responsive" alt=""/>
+                            <img style="width: 100%" src="{{asset('images/user-img/G63-8.jpeg')}}" class="img-responsive" alt=""/>
                             <div class="mask mask-1"> </div>
                             <div class="mask mask-2"> </div>
                             <div class="content">
@@ -98,21 +98,6 @@
                     </div>
                     <h4 class="m_4"><a href="#">Mercedes-AMG</a></h4>
                     <p class="m_5">Bao gồm các mẫu GT Coupé, G-Class
-                    </p>
-                </div>
-                <div class="col-md-3 top_box">
-                    <div class="view view-ninth"><a href="single.html">
-                            <img src="{{asset('images/user-img/GLC.jpeg')}}" class="img-responsive" alt=""/>
-                            <div class="mask mask-1"> </div>
-                            <div class="mask mask-2"> </div>
-                            <div class="content">
-                                <h2>GLC Coupé</h2>
-                                <p>Mạnh mẽ đa tài</p>
-                            </div>
-                        </a><x></x>
-                    </div>
-                    <h4 class="m_4"><a href="#">Coupé</a></h4>
-                    <p class="m_5">Nổi bật có mẫu GLC Coupé
                     </p>
                 </div>
             </div>

@@ -1,7 +1,12 @@
 <?php
 
+use App\Http\Controllers\AccountController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\LoadPage;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RegisterController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,22 +21,45 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('user.index');
-})->name('home');
+
+Route::get('/', [LoadPage::class, 'HomePageLoad'])->name('home');
 
 Route::prefix('user')->group(function (){
-    Route::get('/',[ProductController::class,'showUser'])->name('user.show');
+    Route::get('/',[LoadPage::class,'showProductUser'])->name('user.show');
+    Route::get('/test-driver-register', [LoadPage::class,'PageRegisterTestDriverLoad'])->name('user.testDriveRegister');
+    Route::get('/{id}/detail', [ProductController::class, 'showProductDetail'])->name('user.showByid');
+    Route::get('{id}/cart', [CartController::class, 'addCart'])->name('user.showCart');
+
 });
 
+Route::prefix('login')->group(function (){
+    Route::get('/', [LoadPage::class,'showPageUserLogin'])->name('login');
+    Route::post('/', [LoginController::class,'checkLogin'])->name('login.check');
+    Route::post('/logout', [LoginController::class,'logout'])->name('logout');
+    Route::get('/register', [LoadPage::class,'showPageUserRegister'])->name('user.register');
+    Route::post('/register', [AccountController::class,'registerAccount'])->name('user.registerPost');
+
+});
+
+
+
 Route::prefix('admin')->group(function (){
-    Route::get('/',[ProductController::class,'showAdmin'])->name('admin.show');
+    //Products
+    Route::get('/',[LoadPage::class,'showAdminPage'])->name('admin.show');
     Route::get('/{id?}/delete', [ProductController::class,'delete'])->name('admin.delete');
     Route::get('/{id?}/edit', [ProductController::class,'showById'])->name('admin.showById');
     Route::post('/edit', [ProductController::class,'edit'])->name('admin.edit');
-    Route::get('/add', [ProductController::class,'showFormAdd'])->name('admin.showFormAdd');
+    Route::get('/add', [LoadPage::class,'showFormAddByAdmin'])->name('admin.showFormAdd');
     Route::post('/add', [ProductController::class,'add'])->name('admin.add');
+
+    //Accounts
+    Route::get('/account', [AccountController::class,'getAllAccount'])->name('admin.account');
+    Route::get('{id}/account', [AccountController::class,'showFormEditUserRole'])->name('admin.edit.account');
+    Route::get('{id}/account/delete', [AccountController::class,'deleteAccount'])->name('admin.delete.account');
+    Route::post('{id}/account/delete', [AccountController::class,'deleteAccount'])->name('admin.delete.account');
+    Route::post('/account', [AccountController::class,'editUserRole'])->name('admin.edit.account.post');
 });
+
 
 
 

@@ -4,9 +4,11 @@
 namespace App\Repository;
 
 
+use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use http\Env\Request;
 use Illuminate\Contracts\Session\Session;
+use Illuminate\Support\Facades\Storage;
 
 class ProductRepo
 {
@@ -22,7 +24,8 @@ class ProductRepo
 
     public function deleteByIdRepo($id)
     {
-        Product::destroy($id);
+        $product = $this->findById($id);
+        $product->delete();
     }
 
     public function edit($products)
@@ -32,12 +35,16 @@ class ProductRepo
         $product->productType = $products->getProductType();
         $product->productColor = $products->getProductColor();
         $product->productPrice = $products->getProductPrice();
+        $product->productDesc = $products->getProductDesc();
+        $product->productImg = $products->getProductImg();
         $product->save();
     }
 
     public function add($data)
     {
-        Product::create($data);
-
+//        $product = new Product();
+//        $product->fill($data);
+//        $product->productImg = 'images/user-img/' . $data['productImg'];
+//        $product->save();
     }
 }

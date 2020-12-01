@@ -107,6 +107,7 @@
       <path value="$PROJECT_DIR$/merc/vendor/fakerphp/faker" />
       <path value="$PROJECT_DIR$/merc/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/merc/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/merc/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

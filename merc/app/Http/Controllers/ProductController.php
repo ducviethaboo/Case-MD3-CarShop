@@ -4,10 +4,12 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use App\Models\ProductModel;
 use App\Service\ProductService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -16,12 +18,6 @@ class ProductController extends Controller
     public function __construct(ProductService $productService)
     {
         $this->productController = $productService;
-    }
-
-    public function showAdmin()
-    {
-        $products = $this->productController->getAllProductService();
-        return view('admin.admin', compact('products'));
     }
 
     public function findById($id)
@@ -41,35 +37,39 @@ class ProductController extends Controller
         return view('admin.edit', compact('product'));
     }
 
-    public function edit(Request $request)
+    public function showProductDetail($id)
+    {
+        $product = $this->findById($id);
+        return view('user.productdetail', compact('product'));
+    }
+    public function edit(ProductRequest $request)
     {
         $productId = $request->productId;
         $productName = $request->productName;
         $productType = $request->productType;
         $productColor = $request->productColor;
         $productPrice = $request->productPrice;
-        $product = new ProductModel($productId ,$productName, $productType, $productColor, $productPrice);
+        $productDesc = $request->productDesc;
+        $imageName = 'images/user-img/'.time().'.'.$request->productImg->extension();
+        $request->productImg->move(public_path('images/user-img/'), $imageName);
+        $productImg = $imageName;
+        $product = new ProductModel($productId ,$productName, $productType, $productColor, $productPrice, $productDesc, $productImg);
         $this->productController->editService($product);
         return redirect()->route('admin.show');
 
     }
 
-    public function showFormAdd()
-    {
-        return view('admin.add');
-    }
 
-    public function add(Request $request)
+
+    public function add(ProductRequest $request)
     {
-        $data = $request->all();
-        $this->productController->addService($data);
+        $product = new Product();
+        $product->fill($request->all());
+        $imageName = 'images/user-img/'.time().'.'.$request->productImg->extension();
+        $request->productImg->move(public_path('images/user-img/'), $imageName);
+        $product->productImg = $imageName;
+        $product->save();
         return redirect()->route('admin.show');
-    }
-
-    public function showUser()
-    {
-        $products = $this->productController->getAllProductService();
-        return view('user.shop', compact('products'));
     }
 
 }

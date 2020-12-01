@@ -16,6 +16,7 @@ class Product extends Model
             'productType',
             'productColor',
             'productPrice',
+            'productDesc',
         ];
 
 }
