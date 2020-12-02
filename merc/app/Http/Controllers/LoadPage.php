@@ -19,6 +19,11 @@ class LoadPage extends Controller
     {
         return view('user.index');
     }
+    public function showAdminPage()
+    {
+        $products = $this->pageController->getAllProductService();
+        return view('admin.admin', compact('products'));
+    }
 
     public function showPageUserLogin()
     {
@@ -52,10 +57,6 @@ class LoadPage extends Controller
         return view('admin.add');
 
     }
-    public function showAdminPage()
-    {
-        $products = $this->pageController->getAllProductService();
-        return view('admin.admin', compact('products'));
-    }
+
 
 }

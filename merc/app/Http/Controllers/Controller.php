@@ -13,10 +13,4 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function userCan($action, $option = NULL)
-
-    {
-        $user = Auth::user();
-        return Gate::forUser($user)->allows($action, $option);
-    }
 }

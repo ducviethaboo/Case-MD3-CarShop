@@ -6,7 +6,7 @@ use App\Http\Controllers\LoadPage;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\TestController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', [LoadPage::class, 'HomePageLoad'])->name('home');
+Route::get('/', [UserController::class,'showPageGuest'])->name('home');
 
 
 Route::prefix('user')->group(function (){
@@ -48,7 +48,7 @@ Route::prefix('login')->group(function (){
 
 Route::prefix('admin')->group(function (){
     //Products
-    Route::get('/',[LoadPage::class,'showAdminPage'])->name('admin.show');
+    Route::get('/',[UserController::class,'showPageAdmin'])->name('admin.show');
     Route::get('/{id?}/delete', [ProductController::class,'delete'])->name('admin.delete');
     Route::get('/{id?}/edit', [ProductController::class,'showById'])->name('admin.showById');
     Route::post('/edit', [ProductController::class,'edit'])->name('admin.edit');

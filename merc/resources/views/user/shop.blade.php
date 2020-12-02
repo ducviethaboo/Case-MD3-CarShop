@@ -74,7 +74,7 @@
                             <a  href="{{route('user.showByid', $product->id)}}"
                                    class="text-dark btn ">Mercedes-Benz <br> <p style="font-size: 15px; font-family: 'Open Sans', sans-serif">{{$product->productName}}</p></a>
                             <p class="small text-muted font-italic">{{$product->productType}}</p>
-                            <a class="btn" style="color: #00AAF0" href="{{route('user.showByid', $product->id)}}">Xem chi tiết</a>
+                            <a class="btn" style="color: #005cbf" href="{{route('user.showByid', $product->id)}}">Xem chi tiết</a>
                         </div>
                     </div>
                 </div>

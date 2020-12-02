@@ -29,7 +29,7 @@
                     </div>
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Role:</label>
-                        <select name="role" style="width: 100px" class="form-control">
+                        <select name="role" style="width: 100px; margin-left: 12px" class="form-control">
                                 <option value="Admin" selected>Admin</option>
                                 <option value="User" selected>User</option>
                         </select>
@@ -38,8 +38,8 @@
                         <label class="col-md-3 control-label"></label>
                         <div class="col-md-8">
                             <input type="submit" class="btn btn-success" value="Cập nhật">
-                            <a class="btn btn-danger" href="{{route('admin.delete.account', $account->id)}}">Xoá tài khoản này</a>
-                            <a class="btn" href="{{route('admin.account')}}">Quay lại</a>
+                            <a class="btn btn-danger" href="{{route('admin.delete.account', $account->id)}}">Xoá tài khoản</a>
+                            <a style="color: #00AAF0" class="btn" href="{{route('admin.account')}}">Quay lại</a>
                             <span></span>
                         </div>
                     </div>
