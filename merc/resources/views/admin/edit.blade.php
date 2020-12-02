@@ -15,7 +15,7 @@
                         <br>
                         <br>
                         <h6>Thay đổi ảnh khác</h6>
-                        <input name="productImg" style="border: 0px" type="file" class="form-control">
+                        <input name="productImg" value="{{$product->productImg}}" style="border: 0px" type="file" class="form-control">
                     </div>
                 </div>
                 <!-- edit form column -->

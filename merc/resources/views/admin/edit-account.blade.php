@@ -22,6 +22,12 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="col-lg-3 control-label">Số điện thoại:</label>
+                        <div class="col-lg-8">
+                            <input disabled class="form-control" type="text" value="{{$account->phone}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label class="col-lg-3 control-label">Role:</label>
                         <select name="role" style="width: 100px" class="form-control">
                                 <option value="Admin" selected>Admin</option>
@@ -32,8 +38,8 @@
                         <label class="col-md-3 control-label"></label>
                         <div class="col-md-8">
                             <input type="submit" class="btn btn-success" value="Cập nhật">
-                            <a class="btn btn-danger" href="{{route('admin.account')}}">Huỷ bỏ</a>
                             <a class="btn btn-danger" href="{{route('admin.delete.account', $account->id)}}">Xoá tài khoản này</a>
+                            <a class="btn" href="{{route('admin.account')}}">Quay lại</a>
                             <span></span>
                         </div>
                     </div>

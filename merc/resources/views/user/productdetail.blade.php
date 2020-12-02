@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="application/x-javascript"> addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
         }, false);
@@ -87,18 +88,19 @@
 {{--                    </div>--}}
 {{--                </div>--}}
                     <div class="row">
-                        <img src='{{asset("$product->productImg")}}' alt="">
+                        <img style="width: 100%" src='{{asset("$product->productImg")}}'>
                     </div>
                     <!-- end product_slider -->
                     <div>
-                        <h2>{{$product->productName}}</h2>
-                        <p class="price2">{{$product->productPrice . '₫'}}</p>
+                        <h2>Mercedes-Benz {{$product->productName}}</h2>
+                        <p class="price2"><i class="fa fa-dollar" style="font-size:24px"></i>
+                            {{ number_format($product->productPrice, 0, '.', ',')  . '₫'}}</p>
                         <br>
                         <div class="single_right">
-                            <h3> Chi tiết sản phẩm </h3>
+                            <h2> Chi tiết sản phẩm: </h2>
                             <p class="m_10">{{$product->productDesc}}</p>
                             <div class="btn_form">
-                                <a style="font-size: 25px" class="btn btn-primary" href="{{route('user.showCart', $product )}}"> Mua ngay</a>
+                                <a style="font-size: 25px" class="btn btn-primary" href="{{route('user.buy.form')}}"> Mua ngay</a>
                             </div>
                         </div>
                         <div class="clear"></div>

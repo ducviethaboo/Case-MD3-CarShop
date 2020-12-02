@@ -27,7 +27,7 @@
                             <td>{{$product->productName}}</td>
                             <td>{{$product->productType}}</td>
                             <td>{{$product->productColor}}</td>
-                            <td>{{$product->productPrice}}</td>
+                            <td>{{number_format($product->productPrice, 0, ',', '.')}}</td>
                             <td style="width: 20%"><img style="width: 50%" src='{{asset("$product->productImg")}}'></td>
                             <td>
                                <a class="btn btn-success"

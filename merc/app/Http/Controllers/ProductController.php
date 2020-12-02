@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Models\ProductModel;
 use App\Service\ProductService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -18,6 +19,13 @@ class ProductController extends Controller
     public function __construct(ProductService $productService)
     {
         $this->productController = $productService;
+    }
+
+    public function searchProduct(Request $request)
+    {
+        $key = $request->search;
+        $products = DB::table('products')->where('productName', 'LIKE', '%'.$key.'%')->get();
+        return view('user.shop', compact('products'));
     }
 
     public function findById($id)
@@ -58,8 +66,6 @@ class ProductController extends Controller
         return redirect()->route('admin.show');
 
     }
-
-
 
     public function add(ProductRequest $request)
     {

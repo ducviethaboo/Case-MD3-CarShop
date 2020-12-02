@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\Http\Controllers\TestController;
 use PHPUnit\Framework\TestCase;
 
 class ExampleTest extends TestCase
@@ -13,6 +14,9 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $this->assertTrue(true);
+        $test = new TestController();
+        $result = $test->findById(100);
+        $exptected = null;
+        $this->assertEquals($exptected,$result);
     }
 }

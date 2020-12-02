@@ -25,17 +25,19 @@ class RegisterRequest extends FormRequest
     {
         return [
             'email' => 'required',
-            'password' => 'required|min:6|max:10'
+            'password' => 'required|min:6|max:10',
+            'phone' => 'required'
         ];
     }
 
     public function messages()
     {
         return [
-          'email.required' => 'Vui lòng nhập tài khoản',
-          'password.required' => 'Vui lòng nhập mật khẩu',
-          'password.min' => 'Mật khẩu ít nhất phải có 6 ký tự',
-          'password.max' => 'Mật khẩu tối đa là 10 ký tự',
+            'email.required' => 'Vui lòng nhập tài khoản',
+            'password.required' => 'Vui lòng nhập mật khẩu',
+            'password.min' => 'Mật khẩu ít nhất phải có 6 ký tự',
+            'password.max' => 'Mật khẩu tối đa là 10 ký tự',
+            'phone.required' => "Số điện thoại không được để trống"
         ];
     }
 }

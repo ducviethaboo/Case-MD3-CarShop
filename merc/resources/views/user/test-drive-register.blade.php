@@ -22,7 +22,7 @@
                         <span>Mẫu xe lái thử<label>*</label></span>
                         <select id="inputState" class="form-control">
                             @foreach($products as $product)
-                            <option selected>{{$product->productName}}</option>
+                            <option value="{{$product->productName}}" selected>{{$product->productName}}</option>
                             @endforeach
                         </select>
                     </div>

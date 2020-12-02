@@ -13,11 +13,10 @@
         <div class="row">
             <div style="margin-left: -120px" class="col-md-12">
                 <div class="header-left">
-                    <div class="logo">
+                    <div class="logo ">
                         <a href="{{route('home')}}"><img src="https://www.mercedes-benz.com.vn/vi/passengercars/_jcr_content/logo.noscale.cloudsvg.imageLogo.20180312094632.svg" alt=""/></a>
                     </div>
                     <div class="menu">
-                        <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
                         <ul class="nav" id="nav">
                             <li><a href="{{route('home')}}">Trang chủ</a></li>
                             <li><a href="{{route('user.show')}}">Cửa hàng xe</a></li>
@@ -31,6 +30,16 @@
                 </div>
                 <div class="header_right">
                     <!-- start search-->
+                    <div class="search-box">
+                        <div id="sb-search" class="sb-search">
+                            <form method="post" action="{{route('user.search')}}">
+                                @csrf
+                                <input class="sb-search-input" placeholder="Nhập thứ bạn muốn tìm kiếm..." type="search" name="search" id="search">
+                                <input class="sb-search-submit" type="submit">
+                                <span class="sb-icon-search"> </span>
+                            </form>
+                        </div>
+                    </div>
 
                     <!----search-scripts---->
                     <script src="{{asset('js/classie.js')}}"></script>

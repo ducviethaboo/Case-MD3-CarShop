@@ -6,6 +6,7 @@ use App\Http\Controllers\LoadPage;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,11 +25,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LoadPage::class, 'HomePageLoad'])->name('home');
 
+
 Route::prefix('user')->group(function (){
     Route::get('/',[LoadPage::class,'showProductUser'])->name('user.show');
     Route::get('/test-driver-register', [LoadPage::class,'PageRegisterTestDriverLoad'])->name('user.testDriveRegister');
     Route::get('/{id}/detail', [ProductController::class, 'showProductDetail'])->name('user.showByid');
-    Route::get('{id}/cart', [CartController::class, 'addCart'])->name('user.showCart');
+    Route::post('/search', [ProductController::class, 'searchProduct'])->name('user.search');
+    Route::get('/buy', [LoadPage::class,'showFormBuy'])->name('user.buy.form');
 
 });
 
