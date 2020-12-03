@@ -19,4 +19,14 @@ class TestDriverService
     {
         $this->testDriverService->registerTestDriver($testDriverInfo);
     }
+
+    public function getAll()
+    {
+        return $this->testDriverService->getAll();
+    }
+
+    public function getAllById($id)
+    {
+        $this->testDriverService->getAllById($id);
+    }
 }

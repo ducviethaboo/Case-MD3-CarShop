@@ -6,6 +6,7 @@ use App\Http\Controllers\LoadPage;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TestDriverController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -64,6 +65,11 @@ Route::prefix('admin')->group(function (){
     Route::get('{id}/account/delete', [AccountController::class,'deleteAccount'])->name('admin.delete.account');
     Route::post('{id}/account/delete', [AccountController::class,'deleteAccount'])->name('admin.delete.account');
     Route::post('/account', [AccountController::class,'editUserRole'])->name('admin.edit.account.post');
+
+
+    //TestDriver
+    Route::get('/test-drivers', [TestDriverController::class,'getAll'])->name('admin.test-driver-list');
+    Route::get('{id}/test-drivers', [TestDriverController::class,'getAllById'])->name('admin.test-driver-list.edit');
 });
 
 
