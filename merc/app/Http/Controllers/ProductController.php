@@ -24,9 +24,15 @@ class ProductController extends Controller
     public function searchProduct(Request $request)
     {
         $key = $request->search;
-        $products = DB::table('products')->where('productName', 'LIKE', '%' . $key . '%')->get();
-        $existProduct = DB::table('products')->where('productName', 'LIKE', '%' . $key . '%')->exists();
-        if(!$existProduct) {
+        $products = DB::table('products')->where('productName', 'LIKE', '%' . $key . '%')
+            ->orWhere('productType', 'LIKE', '%' . $key . '%')
+            ->orWhere('productColor', 'LIKE', '%' . $key . '%')
+            ->orWhere('productPrice', 'LIKE', '%' . $key . '%')->get();
+        $existProduct = DB::table('products')->where('productName', 'LIKE', '%' . $key . '%')
+            ->orWhere('productType', 'LIKE', '%' . $key . '%')
+            ->orWhere('productColor', 'LIKE', '%' . $key . '%')
+            ->orWhere('productPrice', 'LIKE', '%' . $key . '%')->exists();
+        if (!$existProduct) {
             $request->session()->flash('not-found', 'Không tìm thấy sản phẩm nào!');
         }
         return view('user.shop', compact('products'));

@@ -22,13 +22,14 @@ class LoginController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'Admin'])) {
             $user = Auth::user();
             $name = $user->name;
-            $request->session()->push('login', $name );
+            $request->session()->push('login', $name);
             return view('admin.admin', compact('products'));
         }
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'User'])) {
             $user = Auth::user();
             $name = $user->name;
-            $request->session()->push('login',$name);
+            $id = $user->id;
+            $request->session()->push('login', $id);
             return view('user.index');
         }
         $request->session()->flash('login-fail', 'Tài khoản không hợp lệ');

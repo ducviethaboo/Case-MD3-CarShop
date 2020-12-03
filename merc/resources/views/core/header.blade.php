@@ -51,7 +51,7 @@
             </div>
             <div style="margin-top: 17px">
                 @if(session()->has('login'))
-                    <p style="color: white; font-size: 12px">Đăng nhập bởi: <a href="{{route('user.account.detail')}}">{{$userName = (session()->get('login')[0])}}</a> </p>
+                    <p style="color: white; font-size: 12px">Đăng nhập bởi: <a href="{{route('user.account.detail')}}">{{\Illuminate\Support\Facades\Auth::user()->name}}</a> </p>
                     <form action="{{route('logout')}}" method="post">
                         @csrf
                         <button style="font-size: 12px" class="btn btn-link" type="submit">Đăng xuất</button>

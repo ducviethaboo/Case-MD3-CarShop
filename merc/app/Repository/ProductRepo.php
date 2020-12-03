@@ -4,11 +4,8 @@
 namespace App\Repository;
 
 
-use App\Http\Requests\ProductRequest;
 use App\Models\Product;
-use http\Env\Request;
-use Illuminate\Contracts\Session\Session;
-use Illuminate\Support\Facades\Storage;
+
 
 class ProductRepo
 {

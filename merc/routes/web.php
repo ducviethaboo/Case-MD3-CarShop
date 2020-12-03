@@ -33,6 +33,7 @@ Route::prefix('user')->group(function (){
     Route::post('/search', [ProductController::class, 'searchProduct'])->name('user.search');
     Route::get('/buy', [LoadPage::class,'showFormBuy'])->name('user.buy.form');
     Route::get('/account', [AccountController::class,'getAccountDetail'])->name('user.account.detail');
+    Route::post('/testdriver', [RegisterController::class,'testDriverRegister'])->name('user.testdriver.register');
 });
 
 Route::prefix('login')->group(function (){
