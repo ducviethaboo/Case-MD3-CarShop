@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Gate;
 class UserController extends Controller
 {
     public function userCan($action, $option = NULL)
-
     {
         $user = Auth::user();
         return Gate::forUser($user)->allows($action, $option);
@@ -17,7 +16,7 @@ class UserController extends Controller
 
     public function showPageGuest()
     {
-        if ($this->userCan('user.index')) {
+        if ($this->userCan('user')) {
             abort('403', __('Bạn không có quyền thực hiện thao tác này'));
         }
         return view("user.index");
@@ -28,7 +27,7 @@ class UserController extends Controller
         if (!$this->userCan('admin.admin')) {
             abort('403', __('Bạn không có quyền thực hiện thao tác này'));
         }
-        return view("user.index");
+        return view("admin.admin-home");
     }
 
 

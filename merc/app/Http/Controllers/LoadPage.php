@@ -15,6 +15,10 @@ class LoadPage extends Controller
         $this->pageController = $productService;
     }
 
+    public function showAdminHomePage()
+    {
+        return view('admin.admin-home');
+    }
     public function HomePageLoad()
     {
         return view('user.index');

@@ -28,11 +28,11 @@ Route::get('/', [UserController::class,'showPageGuest'])->name('home');
 
 Route::prefix('user')->group(function (){
     Route::get('/',[LoadPage::class,'showProductUser'])->name('user.show');
-    Route::get('/test-driver-register', [LoadPage::class,'PageRegisterTestDriverLoad'])->name('user.testDriveRegister');
+    Route::middleware('auth')->get('/test-driver-register', [LoadPage::class,'PageRegisterTestDriverLoad'])->name('user.testDriveRegister');
     Route::get('/{id}/detail', [ProductController::class, 'showProductDetail'])->name('user.showByid');
     Route::post('/search', [ProductController::class, 'searchProduct'])->name('user.search');
     Route::get('/buy', [LoadPage::class,'showFormBuy'])->name('user.buy.form');
-
+    Route::get('/account', [AccountController::class,'getAccountDetail'])->name('user.account.detail');
 });
 
 Route::prefix('login')->group(function (){
@@ -47,8 +47,10 @@ Route::prefix('login')->group(function (){
 
 
 Route::prefix('admin')->group(function (){
+    Route::get('/home', [LoadPage::class, 'showAdminHomePage'])->name('admin.home');
     //Products
     Route::get('/',[UserController::class,'showPageAdmin'])->name('admin.show');
+    Route::get('/manager',[LoadPage::class,'showAdminPage'])->name('admin.show.product');
     Route::get('/{id?}/delete', [ProductController::class,'delete'])->name('admin.delete');
     Route::get('/{id?}/edit', [ProductController::class,'showById'])->name('admin.showById');
     Route::post('/edit', [ProductController::class,'edit'])->name('admin.edit');

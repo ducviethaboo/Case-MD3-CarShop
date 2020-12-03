@@ -7,18 +7,6 @@
                 <div class="register-top-grid">
                     <h2>Đăng ký lái thử</h2>
                     <div>
-                        <span>Họ và tên<label>*</label></span>
-                        <input type="text">
-                    </div>
-                    <div>
-                        <span>Số điện thoại<label>*</label></span>
-                        <input type="text">
-                    </div>
-                    <div>
-                        <span>Email<label>*</label></span>
-                        <input type="text">
-                    </div>
-                    <div>
                         <span>Mẫu xe lái thử<label>*</label></span>
                         <select id="inputState" class="form-control">
                             @foreach($products as $product)

@@ -59,4 +59,15 @@ class AccountController extends Controller
         $this->accountService->deleteAccount($id);
         return redirect()->route('admin.account');
     }
+
+    public function getAccountDetail()
+    {
+        return view('user.account-detail');
+    }
+
+    public function showAccounntInfoHeader($id)
+    {
+        $account = $this->accountService->findByIdService($id);
+        return view('core.header', compact('account'));
+    }
 }

@@ -29,4 +29,5 @@ class AccountRepo
     {
         User::destroy($id);
     }
+
 }

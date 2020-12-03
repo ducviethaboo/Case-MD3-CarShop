@@ -59,22 +59,27 @@
         .progress {
             height: 10px;
         }</style>
-
-
-
     <div class="container py-5">
+{{--        <p> Kết quả tìm kiếm: {{$key}}</p>--}}
         <div class="row pb-5 mb-4">
+            @if(session()->has('not-found'))
+                <p style="color: red">{{session()->get('not-found')}}</p>
+            @endif
             @foreach($products as $product)
                 <div style="text-align: center" class="col-lg-3 col-md-6 mb-4 mb-lg-0 mt-5">
                     <!-- Card-->
                     <div class="card rounded shadow-sm border-0">
-                        <div style="height: 300px !important;box-shadow: 5px 10px 18px lightgrey" class="card-body p-4"><img style="height: 110px !important"
-                                                        src='{{asset("$product->productImg")}}' alt=""
-                                                        class="img-fluid d-block mx-auto mb-3">
-                            <a  href="{{route('user.showByid', $product->id)}}"
-                                   class="text-dark btn ">Mercedes-Benz <br> <p style="font-size: 15px; font-family: 'Open Sans', sans-serif">{{$product->productName}}</p></a>
+                        <div style="height: 300px !important;box-shadow: 5px 10px 18px lightgrey" class="card-body p-4">
+                            <img style="height: 110px !important"
+                                 src='{{asset("$product->productImg")}}' alt=""
+                                 class="img-fluid d-block mx-auto mb-3">
+                            <a href="{{route('user.showByid', $product->id)}}"
+                               class="text-dark btn ">Mercedes-Benz <br>
+                                <p style="font-size: 15px; font-family: 'Open Sans', sans-serif">{{$product->productName}}</p>
+                            </a>
                             <p class="small text-muted font-italic">{{$product->productType}}</p>
-                            <a class="btn" style="color: #005cbf" href="{{route('user.showByid', $product->id)}}">Xem chi tiết</a>
+                            <a class="btn" style="color: #005cbf" href="{{route('user.showByid', $product->id)}}">Xem
+                                chi tiết</a>
                         </div>
                     </div>
                 </div>

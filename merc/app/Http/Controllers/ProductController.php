@@ -24,7 +24,11 @@ class ProductController extends Controller
     public function searchProduct(Request $request)
     {
         $key = $request->search;
-        $products = DB::table('products')->where('productName', 'LIKE', '%'.$key.'%')->get();
+        $products = DB::table('products')->where('productName', 'LIKE', '%' . $key . '%')->get();
+        $existProduct = DB::table('products')->where('productName', 'LIKE', '%' . $key . '%')->exists();
+        if(!$existProduct) {
+            $request->session()->flash('not-found', 'Không tìm thấy sản phẩm nào!');
+        }
         return view('user.shop', compact('products'));
     }
 
@@ -50,6 +54,7 @@ class ProductController extends Controller
         $product = $this->findById($id);
         return view('user.productdetail', compact('product'));
     }
+
     public function edit(ProductRequest $request)
     {
         $productId = $request->productId;
@@ -58,10 +63,10 @@ class ProductController extends Controller
         $productColor = $request->productColor;
         $productPrice = $request->productPrice;
         $productDesc = $request->productDesc;
-        $imageName = 'images/user-img/'.time().'.'.$request->productImg->extension();
+        $imageName = 'images/user-img/' . time() . '.' . $request->productImg->extension();
         $request->productImg->move(public_path('images/user-img/'), $imageName);
         $productImg = $imageName;
-        $product = new ProductModel($productId ,$productName, $productType, $productColor, $productPrice, $productDesc, $productImg);
+        $product = new ProductModel($productId, $productName, $productType, $productColor, $productPrice, $productDesc, $productImg);
         $this->productController->editService($product);
         return redirect()->route('admin.show');
 
@@ -71,7 +76,7 @@ class ProductController extends Controller
     {
         $product = new Product();
         $product->fill($request->all());
-        $imageName = 'images/user-img/'.time().'.'.$request->productImg->extension();
+        $imageName = 'images/user-img/' . time() . '.' . $request->productImg->extension();
         $request->productImg->move(public_path('images/user-img/'), $imageName);
         $product->productImg = $imageName;
         $product->save();
