@@ -21,16 +21,20 @@
                     </tr>
                     </thead>
                     <tbody>
-{{--                    {{dd($testDriversList)}}--}}
+                    {{--                    {{dd($testDriversList)}}--}}
                     @foreach($testDriversList as $value)
                         <tr>
                             <td>{{$value->name}}</td>
                             <td>{{$value->email}}</td>
                             <td>{{$value->phone}}</td>
                             <td>Mercedes-Benz {{$value->productName}}</td>
-                            <td>{{$value->status}}</td>
+                            @if($value->status === "Chưa xử lý")
+                                <td><p style="color:#e60000">{{$value->status}}</p></td>
+                            @else
+                                <td><p style="color: #00ff00">{{$value->status}}</p></td>
+                            @endif
                             <td>{{$value->testDate}}</td>
-                            <td><a href="{{route('admin.test-driver-list.edit', $value->id)}}">Sửa</a></td>
+                            <td><a href="{{route('admin.edit-test-driver', $value->id)}}">Sửa</a></td>
                         </tr>
                     @endforeach
                     </tbody>

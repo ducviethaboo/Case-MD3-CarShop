@@ -27,6 +27,11 @@ class TestDriverService
 
     public function getAllById($id)
     {
-        $this->testDriverService->getAllById($id);
+        return $this->testDriverService->getAllById($id);
+    }
+
+    public function updateStatus($id, $status)
+    {
+        $this->testDriverService->updateStatus($id, $status);
     }
 }

@@ -21,17 +21,23 @@ class TestDriverRepo
         return DB::table('testdrivers')
             ->join('users', 'testdrivers.userTest', '=', 'users.id')
             ->join('products', 'testdrivers.productTest', '=', 'products.id')
-            ->select('users.name', 'users.id',  'users.email', 'users.phone', 'products.productName', 'testdrivers.status', 'testdrivers.testDate')
+            ->select('users.name', 'users.id', 'users.email', 'users.phone', 'products.productName', 'testdrivers.status', 'testdrivers.testDate')
             ->get();
     }
 
     public function getAllById($id)
     {
-        $abc = DB::table('testdrivers')
-            ->join('users', function ($join) {
-                $join->on('testdrivers.userTest', '=' , 'users.id')->where('users.id', '=', id);
-            });
+        return DB::table('testdrivers')
+            ->join('users', 'testdrivers.userTest', '=', 'users.id')
+            ->join('products', 'testdrivers.productTest', '=', 'products.id')
+            ->select('users.name', 'users.id', 'users.email', 'users.phone', 'products.productName', 'testdrivers.status', 'testdrivers.testDate')
+            ->where('users.id', '=', $id)
+            ->get();
+    }
 
-        dd($abc);
+    public function updateStatus($id, $status)
+    {
+         DB::table('testdrivers')->where('userTest', '=', $id)
+            ->update(['status' => $status]);
     }
 }

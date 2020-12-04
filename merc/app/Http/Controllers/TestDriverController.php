@@ -23,6 +23,15 @@ class TestDriverController extends Controller
 
     public function getAllById($id)
     {
-        $abc = $this->testDriver->getAllById($id);
+        $userEdit = $this->testDriver->getAllById($id);
+        return view('admin.edit-test-drivers', compact('userEdit'));
+    }
+
+    public function editStatusTest(Request $request)
+    {
+        $id = $request->id;
+        $status = $request->status;
+        $this->testDriver->updateStatus($id, $status);
+        return redirect()->route('admin.test-driver-list');
     }
 }

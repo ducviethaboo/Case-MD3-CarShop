@@ -89,7 +89,7 @@
         <footer class="py-4 bg-light mt-auto">
             <div class="container-fluid">
                 <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Quản lý bởi <a target="_blank" href="https://www.facebook.com/ducviet1997/">Đức Việt</a></div>
+                    <div class="text-muted">Design by <a target="_blank" href="https://www.facebook.com/ducviet1997/">Đức Việt</a></div>
                 </div>
             </div>
         </footer>

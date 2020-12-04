@@ -50,6 +50,7 @@ Route::prefix('login')->group(function (){
 
 Route::prefix('admin')->group(function (){
     Route::get('/home', [LoadPage::class, 'showAdminHomePage'])->name('admin.home');
+
     //Products
     Route::get('/',[UserController::class,'showPageAdmin'])->name('admin.show');
     Route::get('/manager',[LoadPage::class,'showAdminPage'])->name('admin.show.product');
@@ -69,7 +70,8 @@ Route::prefix('admin')->group(function (){
 
     //TestDriver
     Route::get('/test-drivers', [TestDriverController::class,'getAll'])->name('admin.test-driver-list');
-    Route::get('{id}/test-drivers', [TestDriverController::class,'getAllById'])->name('admin.test-driver-list.edit');
+    Route::get('{id}/edit-test-drivers', [TestDriverController::class,'getAllById'])->name('admin.edit-test-driver');
+    Route::post('/edit-test-drivers', [TestDriverController::class,'editStatusTest'])->name('admin.edit-status-test-driver');
 });
 
 
