@@ -12,17 +12,23 @@
 <div class="footer">
     <div class="container">
         <div class="row">
-
             <div class="col-md-3">
-                <ul class="footer_box">
-                    <h4>Việt Hà Auto</h4>
-                    <li><i class='fas fa-map-marker-alt' style='font-size:15px; color: white'>  Địa chỉ: 89 Bồ Đề, Long Biên, Hà Nội</i>
-                    </li>
-                    <li><i class='fas fa-envelope-open' style='font-size:15px; color: white'>  Email: ducviet300397@gmail.com</i>
-                    </li>
-                    <li><i class='fas fa-mobile-alt' style='font-size:15px; color: white'>  Điện thoại: 0906888666</i>
-                        </li>
-                </ul>
+                    <table>
+                        <h2 style="color: white">Việt Hà Auto</h2>
+                        <br>
+                        <tr>
+                            <td style="text-align: center; width: 30px"><p class='fas fa-map-marker-alt' style='font-size:17px; color: white'></p></td>
+                            <td style="text-align: left"><p style="color: white">Địa chỉ: 89 Bồ Đề, Long Biên, Hà Nội</p></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center"><p class='fas fa-envelope-open' style='font-size:17px; color: white'></p></td>
+                            <td style="text-align: left"><p style="color: white">Email: ducviet300397@gmail.com</p></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center"> <p class='fas fa-mobile-alt' style='font-size:17px; color: white'></p></td>
+                            <td style="text-align: left"><p style="color: white">Điện thoại: 0906888666</p></td>
+                        </tr>
+                    </table>
             </div>
             <div class="col-md-3">
                 <ul class="footer_box">

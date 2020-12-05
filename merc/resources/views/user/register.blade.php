@@ -148,10 +148,10 @@
         --input-padding-x: 1.5rem;
         --input-padding-y: .75rem;
     }
-
     body {
-        background-image: url("http://admin.xevaphongcach.net/Images2018/Uploaded/Quynh2018/Thang10/09/me1.png");
+        background-color: lightgrey;
     }
+
 
     .card-signin {
         border: 0;
@@ -169,7 +169,7 @@
     .card-signin .card-img-left {
         width: 45%;
         /* Link to your background image using in the property below! */
-        background: scroll center url('https://i.pinimg.com/564x/58/55/de/5855de92c2f1b51b79a74aec57e33019.jpg');
+        background: scroll center url('https://i.pinimg.com/564x/f4/6c/9f/f46c9f5ef068da5b96d4a53a236463eb.jpg');
         background-size: cover;
     }
 
@@ -265,8 +265,8 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-lg-10 col-xl-9 mx-auto">
-            <div class="card card-signin flex-row my-5">
+        <div  class="col-lg-10 col-xl-9 mx-auto mt-5">
+            <div style="box-shadow: 5px 10px 18px grey" class="card card-signin flex-row my-5">
                 <div class="card-img-left d-none d-md-flex">
                     <!-- Background image for card set in CSS! -->
                 </div>
@@ -298,10 +298,27 @@
 
                         <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Đăng ký tài khoản</button>
                         <a class="d-block text-center mt-2 small" href="{{route('login')}}">Đăng nhập</a>
+                        <a class="d-block text-center mt-2 small" href="{{route('home')}}">Quay lại</a>
                         <hr class="my-4">
-                        <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign up with Google</button>
-                        <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign up with Facebook</button>
                     </form>
+                    <div style="display: inline; text-align: center" class="col-md-3">
+                        <table>
+                            <h3>Việt Hà Auto</h3>
+                            <br>
+                            <tr>
+                                <td style="text-align: center"><p class='fas fa-map-marker-alt' style='font-size:17px'></p></td>
+                                <td style="text-align: left"><p>Địa chỉ: 89 Bồ Đề, Long Biên, Hà Nội</p></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center"><p class='fas fa-envelope-open' style='font-size:17px'></p></td>
+                                <td style="text-align: left"><p>Email: ducviet300397@gmail.com</p></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center"> <p class='fas fa-mobile-alt' style='font-size:17px'></p></td>
+                                <td style="text-align: left"><p>Điện thoại: 0906888666</p></td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

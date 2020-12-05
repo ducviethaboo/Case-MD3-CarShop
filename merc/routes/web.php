@@ -1,14 +1,12 @@
 <?php
 
 use App\Http\Controllers\AccountController;
-use App\Http\Controllers\CartController;
 use App\Http\Controllers\LoadPage;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TestDriverController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,15 +30,15 @@ Route::prefix('user')->group(function (){
     Route::middleware('auth')->get('/test-driver-register', [LoadPage::class,'PageRegisterTestDriverLoad'])->name('user.testDriveRegister');
     Route::get('/{id}/detail', [ProductController::class, 'showProductDetail'])->name('user.showByid');
     Route::post('/search', [ProductController::class, 'searchProduct'])->name('user.search');
-    Route::get('/buy', [LoadPage::class,'showFormBuy'])->name('user.buy.form');
+    Route::middleware('auth')->get('/buy', [LoadPage::class,'showFormBuy'])->name('user.buy.form');
     Route::get('/account', [AccountController::class,'getAccountDetail'])->name('user.account.detail');
     Route::post('/testdriver', [RegisterController::class,'testDriverRegister'])->name('user.testdriver.register');
 });
 
 Route::prefix('login')->group(function (){
     Route::get('/', [LoadPage::class,'showPageUserLogin'])->name('login');
-    Route::post('/', [LoginController::class,'checkLogin'])->name('login.check');
-    Route::post('/logout', [LoginController::class,'logout'])->name('logout');
+    Route::post('/loginform', [LoginController::class,'checkLogin'])->name('login.check');
+    Route::post('/', [LoginController::class,'logout'])->name('logout');
     Route::get('/register', [LoadPage::class,'showPageUserRegister'])->name('user.register');
     Route::post('/register', [AccountController::class,'registerAccount'])->name('user.registerPost');
 

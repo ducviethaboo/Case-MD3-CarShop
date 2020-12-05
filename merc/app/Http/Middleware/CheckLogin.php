@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use MongoDB\Driver\Session;
 
 class CheckLogin
@@ -17,15 +18,12 @@ class CheckLogin
      */
     public function handle(Request $request, Closure $next)
     {
-//        $email = $request->email;
-//        $password = $request->password;
-//        if($email === 'admin' && $password === 'admin') {
-//            $request->session()->push('login', true);
-//            return $next($request);
-//        }
-//        $request->session()->flash('loggin-error', 'Bạn không phải là admin');
-//        $abc = $request->session()->get('login-error');
-//        dd(abc);
-//        return redirect()->route('home');
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'User'])) {
+            $user = Auth::user();
+            $name = $user->name;
+            $id = $user->id;
+            $request->session()->push('login', $id);
+            return $next($request);
+        }
     }
 }
