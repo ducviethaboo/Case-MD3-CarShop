@@ -16,7 +16,12 @@ class ProductService
 
     public function getAllProductService()
     {
-        return $this->productService->getAll();
+        return $this->productService->getAllPaginate();
+    }
+
+    public function getAllProductByAdmin()
+    {
+        return $this->productService->getAllByAdmin();
     }
 
     public function findById($id)

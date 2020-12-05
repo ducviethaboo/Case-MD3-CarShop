@@ -60,7 +60,7 @@
             height: 10px;
         }</style>
     <div class="container py-5">
-{{--        <p> Kết quả tìm kiếm: {{$key}}</p>--}}
+        {{--        <p> Kết quả tìm kiếm: {{$key}}</p>--}}
         <div class="row pb-5 mb-4">
             @if(session()->has('not-found'))
                 <p style="color: red">{{session()->get('not-found')}}</p>
@@ -85,5 +85,10 @@
                 </div>
             @endforeach
         </div>
+        @if(count($products) > 1)
+            <div style="text-align: center">
+            <p>{{ $products->links() }}</p>
+            </div>
+        @endif
     </div>
 @endsection

@@ -1,70 +1,170 @@
 @extends('core.master')
 @section('content')
-    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.3.1.slim.min.js">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <section class="pt-5 pb-5">
+
+    {{--    <h2 class="text-center m-4">{{ "Chi tiết giỏ hàng" }}</h2>--}}
+    {{--    @if (session()->has('success'))--}}
+    {{--        <div class="col-12 alert alert-success alert-block">--}}
+    {{--            <button type="button" class="close" data-dismiss="alert">×</button>--}}
+    {{--            <strong>{{ session()->get('success') }}</strong>--}}
+    {{--        </div>--}}
+
+    {{--    @endif--}}
+    {{--    @if (session()->has('delete_error'))--}}
+    {{--        <div class="col-12 alert alert-danger alert-block">--}}
+    {{--            <button type="button" class="close" data-dismiss="alert">×</button>--}}
+    {{--            <strong>{{ session()->get('delete_error') }}</strong>--}}
+    {{--        </div>--}}
+    {{--    @endif--}}
+    {{--    <div class="col-12 col-md-12 mt-2 border">--}}
+    {{--        <table id="cart" class="table table-hover table-bordered mt-4">--}}
+    {{--            <thead>--}}
+    {{--            <tr>--}}
+    {{--                <th style="width:50%">Product</th>--}}
+    {{--                <th style="width:10%">Price</th>--}}
+    {{--                <th style="width:8%">Quantity</th>--}}
+    {{--                <th style="width:22%" class="text-center">Subtotal</th>--}}
+    {{--                <th style="width:10%"></th>--}}
+    {{--            </tr>--}}
+    {{--            </thead>--}}
+    {{--            <tbody>--}}
+    {{--            @if(session()->has('cart') && $cart->totalQty > 0)--}}
+    {{--                @foreach($cart->items as $product)--}}
+    {{--                    <tr>--}}
+    {{--                        <td data-th="Product">--}}
+    {{--                            <div class="row">--}}
+    {{--                                <div class="col-md-2 hidden-xs"><img--}}
+    {{--                                        src="{{ asset('images/' . $product['item']->productImg) }}"--}}
+    {{--                                        alt="..."--}}
+    {{--                                        class="img-responsive" width="100%"/></div>--}}
+    {{--                                <div class="col-md-10">--}}
+    {{--                                    <h4 class="nomargin">{{ $product['item']->productName }}</h4>--}}
+    {{--                                </div>--}}
+    {{--                            </div>--}}
+    {{--                        </td>--}}
+    {{--                        <td data-th="Price">--}}
+    {{--                        {{ '$' . $product['item']->price }}--}}
+    {{--                        </td>--}}
+    {{--                        <td data-th="Quantity">--}}
+    {{--                            <input type="number" data-id="{{ $product['item']->id }}" class="form-control text-center update-product-cart" min="0" name="qty"--}}
+    {{--                                   value="{{ $product['qty'] }}">--}}
+    {{--                        </td>--}}
+    {{--                        <td data-th="Subtotal" id="product-subtotal-{{$product['item']->id}}" class="text-center">{{ '$' . $product['price']  }}</td>--}}
+    {{--                        <td class="actions" data-th="">--}}
+    {{--                            <a class="btn btn-danger btn-sm"--}}
+    {{--                               href="{{ route('cart.removeProductIntoCart', $product['item']->id) }}"><i--}}
+    {{--                                    class="fa fa-trash-o"></i></a>--}}
+    {{--                        </td>--}}
+    {{--                    </tr>--}}
+    {{--                @endforeach--}}
+    {{--            </tbody>--}}
+    {{--            <tfoot>--}}
+    {{--            <tr>--}}
+    {{--                <td><a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>--}}
+    {{--                </td>--}}
+    {{--                <td colspan="2" class="hidden-xs"></td>--}}
+    {{--                <td id="total-price-cart" class="hidden-xs text-center"><strong>Tổng tiền: ${{ $cart->totalPrice }}</strong></td>--}}
+    {{--                <td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>--}}
+    {{--            </tr>--}}
+    {{--            </tfoot>--}}
+    {{--            @else--}}
+    {{--                <tr>--}}
+    {{--                    <td colspan="5" class="text-center"><p>{{ "Bạn chưa mua sản phẩm nào" }}</p></td>--}}
+    {{--                </tr>--}}
+    {{--            @endif--}}
+    {{--        </table>--}}
+
+    {{--    </div>--}}
+    <!--Section: Block Content-->
+    <!--Section: Block Content-->
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"
+          id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <div>
+        @if (session()->has('success'))
+            <div class="col-12 alert alert-success alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>{{ session()->get('success') }}</strong>
+            </div>
+        @endif
+        @if (session()->has('delete_error'))--}}
+        <div class="col-12 alert alert-danger alert-block">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>{{ session()->get('delete_error') }}</strong>
+        </div>
+        @endif
         <div class="container">
-            <div class="row w-100">
-                <div class="col-lg-12 col-md-12 col-12">
-                    <h3 class="display-5 mb-2 text-center">Chi tiết đơn hàng</h3>
-                    <p class="mb-5 text-center">
-                        <i class="text-info font-weight-bold">3</i> items in your cart</p>
-                    <table id="shoppingCart" class="table table-condensed table-responsive">
+            <div class="row">
+                <div class="col-sm-12 col-md-10 col-md-offset-1">
+                    <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th style="width:60%">Sản phẩm</th>
-                            <th style="width:12%">Giá</th>
-                            <th style="width:10%">Số lượng</th>
-                            <th style="width:16%"></th>
+                            <th>Sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th class="text-center">Giá</th>
+                            <th class="text-center">Thành tiền</th>
+                            <th> </th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td data-th="Product">
-                                <div class="row">
-                                    <div class="col-md-3 text-left">
-{{--                                        <img src='{{asset("$cart->productArray[$int][$img]")}}' alt="" class="img-fluid d-none d-md-block rounded mb-2 shadow ">--}}
-                                    </div>
-                                    <div class="col-md-9 text-left mt-sm-2">
-                                        <h4>{{$cart->productArray[0]['productName']}}</h4>
-                                    </div>
-                                </div>
-                            </td>
-                            <td data-th="Price"></td>
-                            <td data-th="Quantity">
-                                <input type="number" class="form-control form-control-lg text-center" value="1">
-                            </td>
-                            <td class="actions" data-th="">
-                                <div class="text-right">
-                                    <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                                        <i class="fas fa-sync"></i>
-                                    </button>
-                                    <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
+                        @if(session()->has('cart') && $cart->totalQty > 0)
+                            @foreach($cart->items as $product)
+                                <tr>
+                                    <td class="col-md-6">
+                                        <div class="media">
+                                            <div class="media-body">
+                                                <h4 class="media-heading"><a
+                                                        href="#">Merc {{ $product['item']->productName }}</a></h4>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="col-md-1" style="text-align: center">
+                                        <input type="email" class="form-control" id="exampleInputEmail1"
+                                               value="{{$product['qty']}}">
+                                    </td>
+                                    <td class="col-md-1 text-center">
+                                        <strong>{{ number_format($product['item']->productPrice, 0, '.', ',') }}</strong>
+                                    </td>
+                                    <td class="col-md-1 text-center">
+                                        <strong>{{ number_format($product['price'], 0, '.', ',') }}</strong></td>
+                                    <td class="col-md-1">
+                                        <a class="btn btn-danger btn-sm"
+                                           href="{{ route('cart.removeProductIntoCart', $product['item']->id) }}"><i
+                                                class="fa fa-trash-o"></i>Xoá khỏi giỏ hàng</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>  </td>
+                                    <td>  </td>
+                                    <td>  </td>
+                                    <td>
+                                        <a class="btn btn-success"
+                                           href="{{ url('/') }}">Tiếp tục mua hàng</a>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-success">
+                                            Checkout
+                                        </button>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @else
+                            <td colspan="5" class="text-center">
+                                <p>{{ "Bạn chưa mua sản phẩm nào" }}@endif
+                                    <tr>
+                                        <td>  </td>
+                                        <td>  </td>
+                                        <td>  </td>
+                                        <td><h3>Thành tiền:</h3></td>
+                                        <td class="text-right"><h3>
+                                                <strong> {{number_format($cart->totalPrice,0,'.',',')}}</strong>
+                                            </h3></td>
+                                    </tr>
                         </tbody>
                     </table>
-                    <div class="float-right text-right">
-                        <h4>Tổng tiền:</h4>
-                        <h1>$99.00</h1>
-                    </div>
                 </div>
             </div>
-            <div class="row mt-4 d-flex align-items-center">
-                <div class="col-sm-6 order-md-2 text-right">
-                    <a href="catalog.html" class="btn btn-primary mb-4 btn-lg pl-5 pr-5">Thanh toán</a>
-                </div>
-                <div class="col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left">
-                    <a href="catalog.html">
-                        <i class="fas fa-arrow-left mr-2"></i> Tiếp tục xem </a>
-                </div>
-            </div>
+
         </div>
-    </section>
 @endsection

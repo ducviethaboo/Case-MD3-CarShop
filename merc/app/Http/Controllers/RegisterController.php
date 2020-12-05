@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegisterRequest;
 use App\Service\TestDriverService;
 use Illuminate\Http\Request;
 

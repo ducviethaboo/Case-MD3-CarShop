@@ -30,6 +30,11 @@
                     </div>
                     <div class="clear"></div>
                 </div>
+                <span class="navbar-text">
+                    <a href="{{route('cart.index')}}">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart <span class="badge badge-secondary">{{ (session()->has('cart')) ? count(session()->get('cart')->items) : "0" }}</span></a>
+
+    </span>
                 <div class="header_right">
                     <div class="search-box">
                         <div id="sb-search" class="sb-search">

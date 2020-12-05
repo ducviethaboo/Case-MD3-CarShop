@@ -9,7 +9,12 @@ use App\Models\Product;
 
 class ProductRepo
 {
-    public function getAll()
+    public function getAllPaginate()
+    {
+        return Product::paginate(4);
+    }
+
+    public function getAllByAdmin()
     {
         return Product::all();
     }

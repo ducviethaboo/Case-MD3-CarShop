@@ -100,7 +100,8 @@
                             <h2> Chi tiết sản phẩm: </h2>
                             <p class="m_10">{{$product->productDesc}}</p>
                             <div class="btn_form">
-                                <a style="font-size: 25px" class="btn btn-primary" href="{{route('user.buy.form')}}"> Mua ngay</a>
+                                <a class="add-to-cart" href="{{ route('cart.addToCart', $product->id) }}">+ Add To Cart</a>
+                                {{--                                <a style="font-size: 25px" class="btn btn-primary" href="{{route('user.addCart', $product->id)}}"> Mua ngay</a>--}}
                             </div>
                         </div>
                         <div class="clear"></div>

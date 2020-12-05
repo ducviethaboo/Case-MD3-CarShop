@@ -25,7 +25,7 @@ class LoadPage extends Controller
     }
     public function showAdminPage()
     {
-        $products = $this->pageController->getAllProductService();
+        $products = $this->pageController->getAllProductByAdmin();
         return view('admin.admin', compact('products'));
     }
 

@@ -86,7 +86,7 @@ class ProductController extends Controller
         $request->productImg->move(public_path('images/user-img/'), $imageName);
         $product->productImg = $imageName;
         $product->save();
-        return redirect()->route('admin.show');
+        return redirect()->route('admin.show.product');
     }
 
 }

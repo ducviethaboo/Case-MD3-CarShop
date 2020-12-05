@@ -30,7 +30,7 @@ class LoginController extends Controller
             $request->session()->push('login', $id);
             return view('user.index');
         }
-        $request->session()->flash('login-fail', 'Tài khoản không hợp lệ');
+        $request->session()->flash('login-fail', 'Tài khoản không tồn tại');
         return redirect()->route('login');
     }
 

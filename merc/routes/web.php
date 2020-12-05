@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\LoadPage;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
@@ -33,6 +34,13 @@ Route::prefix('user')->group(function (){
     Route::middleware('auth')->get('/buy', [LoadPage::class,'showFormBuy'])->name('user.buy.form');
     Route::get('/account', [AccountController::class,'getAccountDetail'])->name('user.account.detail');
     Route::post('/testdriver', [RegisterController::class,'testDriverRegister'])->name('user.testdriver.register');
+
+    //addCart
+    Route::get('/cart',[CartController::class,'index'])->name('cart.index');
+
+    Route::get('/add-to-cart/{id}', [CartController::class,'addToCart'])->name('cart.addToCart');
+    Route::get('/remove-to-cart/{id}', [CartController::class,'removeProductIntoCart'])->name('cart.removeProductIntoCart');
+    Route::post('/update-to-cart/{id}', [CartController::class,'updateProductIntoCart'])->name('cart.updateProductIntoCart');
 });
 
 Route::prefix('login')->group(function (){
