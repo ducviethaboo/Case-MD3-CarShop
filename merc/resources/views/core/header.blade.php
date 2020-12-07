@@ -30,11 +30,6 @@
                     </div>
                     <div class="clear"></div>
                 </div>
-                <span class="navbar-text">
-                    <a href="{{route('cart.index')}}">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart <span class="badge badge-secondary">{{ (session()->has('cart')) ? count(session()->get('cart')->items) : "0" }}</span></a>
-
-    </span>
                 <div class="header_right">
                     <div class="search-box">
                         <div id="sb-search" class="sb-search">
@@ -54,27 +49,36 @@
                     </script>
                 </div>
             </div>
-            <div style="margin-top: 17px">
-                @if(session()->has('login'))
-                    <p style="color: white; font-size: 12px">Đăng nhập bởi: <a
-                            href="{{route('user.account.detail')}}">{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
-                    </p>
-                    <form action="{{route('logout')}}" method="post">
-                        @csrf
-                        <button style="font-size: 12px" class="btn btn-link" type="submit">Đăng xuất</button>
-                    </form>
-                @else
-                    <a style="color: white" href="{{route('login')}}">
-                        <svg width="30px" height="25px" viewBox="0 0 16 16" class="bi bi-box-arrow-in-right"
-                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                  d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
-                            <path fill-rule="evenodd"
-                                  d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-                        </svg>
-                    </a>
-                @endif
-
+            <div style="margin-top: 5px; margin-left: 1050px">
+                <table style="text-align: center">
+                    <tr>
+                        <td>
+                            <div>
+                                @if(session()->has('login'))
+                                    <p style="color: white; font-size: 12px"><a
+                                            href="{{route('user.account.detail')}}">{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
+                                    </p>
+                                    <form action="{{route('logout')}}" method="post">
+                                        @csrf
+                                        <button style="font-size: 12px" class="btn btn-link" type="submit">Đăng xuất
+                                        </button>
+                                    </form>
+                                @else
+                                    <a style="color: white" href="{{route('login')}}">
+                                        <i style="font-size: 20px" class="fa fa-user" aria-hidden="true"></i>
+                                    </a>
+                                @endif
+                            </div>
+                        </td>
+                        <td>
+            <span class="navbar-text">
+                    <a href="{{route('cart.index')}}">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i><span
+                            class="badge badge-secondary">{{ (session()->has('cart')) ? count(session()->get('cart')->items) : 0 }}</span></a>
+            </span>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>

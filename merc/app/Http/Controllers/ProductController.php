@@ -27,7 +27,7 @@ class ProductController extends Controller
         $products = DB::table('products')->where('productName', 'LIKE', '%' . $key . '%')
             ->orWhere('productType', 'LIKE', '%' . $key . '%')
             ->orWhere('productColor', 'LIKE', '%' . $key . '%')
-            ->orWhere('productPrice', 'LIKE', '%' . $key . '%')->get();
+            ->orWhere('productPrice', 'LIKE', '%' . $key . '%')->paginate(4);
         $existProduct = DB::table('products')->where('productName', 'LIKE', '%' . $key . '%')
             ->orWhere('productType', 'LIKE', '%' . $key . '%')
             ->orWhere('productColor', 'LIKE', '%' . $key . '%')

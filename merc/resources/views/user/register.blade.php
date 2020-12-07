@@ -149,7 +149,7 @@
         --input-padding-y: .75rem;
     }
     body {
-        background-color: lightgrey;
+        background-image: url("https://www.elleman.vn/wp-content/uploads/2020/02/15/new-logo-thuong-hieu-elle-man-0220-IM-car-experts.jpg");
     }
 
 

@@ -1,32 +1,5 @@
 @extends('core.master')
 @section('content')
-    {{--    <div class="main">--}}
-    {{--        <div class="shop_top">--}}
-    {{--            <div class="container">--}}
-
-    {{--                <div class="row shop_box-top">--}}
-    {{--                    @foreach($products as $product)--}}
-
-    {{--                        <div class="col-md-3 shop_box mb-3">--}}
-    {{--                            <img style="width: auto" src='{{asset("$product->productImg")}}' class="img-responsive"--}}
-    {{--                                 alt=""/>--}}
-    {{--                            <div class="shop_desc">--}}
-    {{--                                <h3><a href="#">{{$product->productName}}</a></h3>--}}
-    {{--                                <span class="actual">{{$product->productPrice}}</span><br>--}}
-    {{--                                <ul class="buttons">--}}
-    {{--                                    <li class="shop_btn"><a href="{{route('user.showByid', $product->id)}}">Chi tiết</a>--}}
-    {{--                                    </li>--}}
-    {{--                                    <div class="clear"></div>--}}
-    {{--                                </ul>--}}
-    {{--                            </div>--}}
-    {{--                        </div>--}}
-    {{--                    @endforeach--}}
-
-    {{--                </div>--}}
-
-    {{--            </div>--}}
-    {{--        </div>--}}
-    {{--    </div>--}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/jquery-3.3.1.slim.min.js">
     <link rel="stylesheet"
@@ -49,16 +22,7 @@
             transition: all 0.3s;
             font-size: 0.9rem;
         }
-
-        .social-link:hover, .social-link:focus {
-            background: #ddd;
-            text-decoration: none;
-            color: #555;
-        }
-
-        .progress {
-            height: 10px;
-        }</style>
+</style>
     <div class="container py-5">
         {{--        <p> Kết quả tìm kiếm: {{$key}}</p>--}}
         <div class="row pb-5 mb-4">

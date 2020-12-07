@@ -73,35 +73,20 @@
     <div class="main">
         <div class="shop_top">
             <div class="container">
-{{--                <div class="row">--}}
-{{--                    <div class="col-md-9 single_left">--}}
-{{--                        <div class="single_image">--}}
-{{--                            <ul id="etalage">--}}
-{{--                                <li>--}}
-{{--                                    <a href="optionallink.html">--}}
-{{--                                        <img class="etalage_thumb_image" src='{{asset("$product->productImg")}}' />--}}
-{{--                                        <img style=" height: 400px; display: inline; opacity: 1" class="etalage_source_image" src='{{asset("$product->productImg")}}'/>--}}
-{{--                                    </a>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
                     <div class="row">
                         <img style="width: 100%" src='{{asset("$product->productImg")}}'>
                     </div>
                     <!-- end product_slider -->
                     <div>
                         <h2>Mercedes-Benz {{$product->productName}}</h2>
-                        <p class="price2"><i class="fa fa-dollar" style="font-size:24px"></i>
+                        <p class="price2">
                             {{ number_format($product->productPrice, 0, '.', ',')  . '₫'}}</p>
                         <br>
                         <div class="single_right">
                             <h2> Chi tiết sản phẩm: </h2>
                             <p class="m_10">{{$product->productDesc}}</p>
                             <div class="btn_form">
-                                <a class="add-to-cart" href="{{ route('cart.addToCart', $product->id) }}">+ Add To Cart</a>
-                                {{--                                <a style="font-size: 25px" class="btn btn-primary" href="{{route('user.addCart', $product->id)}}"> Mua ngay</a>--}}
+                                <a class="add-to-cart" onclick="alert('Thêm sản phẩm vào giỏ hàng thành công')" href="{{ route('cart.addToCart', $product->id) }}">+ Add To Cart</a>
                             </div>
                         </div>
                         <div class="clear"></div>

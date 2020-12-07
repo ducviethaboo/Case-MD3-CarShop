@@ -36,9 +36,8 @@ Route::prefix('user')->group(function (){
     Route::post('/testdriver', [RegisterController::class,'testDriverRegister'])->name('user.testdriver.register');
 
     //addCart
-    Route::get('/cart',[CartController::class,'index'])->name('cart.index');
-
-    Route::get('/add-to-cart/{id}', [CartController::class,'addToCart'])->name('cart.addToCart');
+    Route::middleware('auth')->get('/cart',[CartController::class,'index'])->name('cart.index');
+    Route::middleware('auth')->get('/add-to-cart/{id}', [CartController::class,'addToCart'])->name('cart.addToCart');
     Route::get('/remove-to-cart/{id}', [CartController::class,'removeProductIntoCart'])->name('cart.removeProductIntoCart');
     Route::post('/update-to-cart/{id}', [CartController::class,'updateProductIntoCart'])->name('cart.updateProductIntoCart');
 });

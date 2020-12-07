@@ -17,15 +17,15 @@
                         <h2 style="color: white">Việt Hà Auto</h2>
                         <br>
                         <tr>
-                            <td style="text-align: center; width: 30px"><p class='fas fa-map-marker-alt' style='font-size:17px; color: white'></p></td>
+                            <td style="text-align: center; width: 30px; height: 30px"><p class='fas fa-map-marker-alt' style='font-size:17px; color: white'></p></td>
                             <td style="text-align: left"><p style="color: white">Địa chỉ: 89 Bồ Đề, Long Biên, Hà Nội</p></td>
                         </tr>
                         <tr>
-                            <td style="text-align: center"><p class='fas fa-envelope-open' style='font-size:17px; color: white'></p></td>
+                            <td style="text-align: center; height: 30px"><p class='fas fa-envelope-open' style='font-size:17px; color: white'></p></td>
                             <td style="text-align: left"><p style="color: white">Email: ducviet300397@gmail.com</p></td>
                         </tr>
                         <tr>
-                            <td style="text-align: center"> <p class='fas fa-mobile-alt' style='font-size:17px; color: white'></p></td>
+                            <td style="text-align: center; height: 30px"> <p class='fas fa-mobile-alt' style='font-size:17px; color: white'></p></td>
                             <td style="text-align: left"><p style="color: white">Điện thoại: 0906888666</p></td>
                         </tr>
                     </table>
