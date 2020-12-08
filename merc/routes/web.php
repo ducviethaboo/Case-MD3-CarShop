@@ -22,61 +22,58 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::get('/', [UserController::class, 'showPageGuest'])->name('home');
 
-Route::get('/', [UserController::class,'showPageGuest'])->name('home');
 
-
-Route::prefix('user')->group(function (){
-    Route::get('/',[LoadPage::class,'showProductUser'])->name('user.show');
-    Route::middleware('auth')->get('/test-driver-register', [LoadPage::class,'PageRegisterTestDriverLoad'])->name('user.testDriveRegister');
+Route::prefix('user')->group(function () {
+    Route::get('/', [LoadPage::class, 'showProductUser'])->name('user.show');
+    Route::middleware('auth')->get('/test-driver-register', [LoadPage::class, 'PageRegisterTestDriverLoad'])->name('user.testDriveRegister');
     Route::get('/{id}/detail', [ProductController::class, 'showProductDetail'])->name('user.showByid');
     Route::post('/search', [ProductController::class, 'searchProduct'])->name('user.search');
-    Route::middleware('auth')->get('/buy', [LoadPage::class,'showFormBuy'])->name('user.buy.form');
-    Route::get('/account', [AccountController::class,'getAccountDetail'])->name('user.account.detail');
-    Route::post('/testdriver', [RegisterController::class,'testDriverRegister'])->name('user.testdriver.register');
+    Route::middleware('auth')->get('/buy', [LoadPage::class, 'showFormBuy'])->name('user.buy.form');
+    Route::get('/account', [AccountController::class, 'getAccountDetail'])->name('user.account.detail');
+    Route::post('/testdriver', [RegisterController::class, 'testDriverRegister'])->name('user.testdriver.register');
 
     //addCart
-    Route::middleware('auth')->get('/cart',[CartController::class,'index'])->name('cart.index');
-    Route::middleware('auth')->get('/add-to-cart/{id}', [CartController::class,'addToCart'])->name('cart.addToCart');
-    Route::get('/remove-to-cart/{id}', [CartController::class,'removeProductIntoCart'])->name('cart.removeProductIntoCart');
-    Route::post('/update-to-cart/{id}', [CartController::class,'updateProductIntoCart'])->name('cart.updateProductIntoCart');
-});
-
-Route::prefix('login')->group(function (){
-    Route::get('/', [LoadPage::class,'showPageUserLogin'])->name('login');
-    Route::post('/loginform', [LoginController::class,'checkLogin'])->name('login.check');
-    Route::post('/', [LoginController::class,'logout'])->name('logout');
-    Route::get('/register', [LoadPage::class,'showPageUserRegister'])->name('user.register');
-    Route::post('/register', [AccountController::class,'registerAccount'])->name('user.registerPost');
-
+    Route::middleware('auth')->get('/cart', [CartController::class, 'index'])->name('cart.index');
+    Route::middleware('auth')->get('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('cart.addToCart');
+    Route::get('/remove-to-cart/{id}', [CartController::class, 'removeProductIntoCart'])->name('cart.removeProductIntoCart');
+    Route::post('/update-to-cart/{id}', [CartController::class, 'updateProductIntoCart'])->name('cart.updateProductIntoCart');
 });
 
 
+//login
+Route::get('/login', [LoadPage::class, 'showPageUserLogin'])->name('login');
+Route::post('/loginCheck', [LoginController::class, 'checkLogin'])->name('login.check');
+Route::get('/register', [LoadPage::class, 'showPageUserRegister'])->name('user.register');
+Route::post('/', [AccountController::class, 'registerAccount'])->name('user.registerPost');
+Route::post('/', [LoginController::class, 'logout'])->name('logout');
 
-Route::prefix('admin')->group(function (){
+
+Route::prefix('admin')->group(function () {
     Route::get('/home', [LoadPage::class, 'showAdminHomePage'])->name('admin.home');
 
     //Products
-    Route::get('/',[UserController::class,'showPageAdmin'])->name('admin.show');
-    Route::get('/manager',[LoadPage::class,'showAdminPage'])->name('admin.show.product');
-    Route::get('/{id?}/delete', [ProductController::class,'delete'])->name('admin.delete');
-    Route::get('/{id?}/edit', [ProductController::class,'showById'])->name('admin.showById');
-    Route::post('/edit', [ProductController::class,'edit'])->name('admin.edit');
-    Route::get('/add', [LoadPage::class,'showFormAddByAdmin'])->name('admin.showFormAdd');
-    Route::post('/add', [ProductController::class,'add'])->name('admin.add');
+    Route::get('/', [UserController::class, 'showPageAdmin'])->name('admin.show');
+    Route::get('/manager', [LoadPage::class, 'showAdminPage'])->name('admin.show.product');
+    Route::get('/{id?}/delete', [ProductController::class, 'delete'])->name('admin.delete');
+    Route::get('/{id?}/edit', [ProductController::class, 'showById'])->name('admin.showById');
+    Route::post('/edit', [ProductController::class, 'edit'])->name('admin.edit');
+    Route::get('/add', [LoadPage::class, 'showFormAddByAdmin'])->name('admin.showFormAdd');
+    Route::post('/add', [ProductController::class, 'add'])->name('admin.add');
 
     //Accounts
-    Route::get('/account', [AccountController::class,'getAllAccount'])->name('admin.account');
-    Route::get('{id}/account', [AccountController::class,'showFormEditUserRole'])->name('admin.edit.account');
-    Route::get('{id}/account/delete', [AccountController::class,'deleteAccount'])->name('admin.delete.account');
-    Route::post('{id}/account/delete', [AccountController::class,'deleteAccount'])->name('admin.delete.account');
-    Route::post('/account', [AccountController::class,'editUserRole'])->name('admin.edit.account.post');
+    Route::get('/account', [AccountController::class, 'getAllAccount'])->name('admin.account');
+    Route::get('{id}/account', [AccountController::class, 'showFormEditUserRole'])->name('admin.edit.account');
+    Route::get('{id}/account/delete', [AccountController::class, 'deleteAccount'])->name('admin.delete.account');
+    Route::post('{id}/account/delete', [AccountController::class, 'deleteAccount'])->name('admin.delete.account');
+    Route::post('/account', [AccountController::class, 'editUserRole'])->name('admin.edit.account.post');
 
 
     //TestDriver
-    Route::get('/test-drivers', [TestDriverController::class,'getAll'])->name('admin.test-driver-list');
-    Route::get('{id}/edit-test-drivers', [TestDriverController::class,'getAllById'])->name('admin.edit-test-driver');
-    Route::post('/edit-test-drivers', [TestDriverController::class,'editStatusTest'])->name('admin.edit-status-test-driver');
+    Route::get('/test-drivers', [TestDriverController::class, 'getAll'])->name('admin.test-driver-list');
+    Route::get('{id}/edit-test-drivers', [TestDriverController::class, 'getAllById'])->name('admin.edit-test-driver');
+    Route::post('/edit-test-drivers', [TestDriverController::class, 'editStatusTest'])->name('admin.edit-status-test-driver');
 });
 
 

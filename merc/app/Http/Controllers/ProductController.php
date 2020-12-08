@@ -74,7 +74,7 @@ class ProductController extends Controller
         $productImg = $imageName;
         $product = new ProductModel($productId, $productName, $productType, $productColor, $productPrice, $productDesc, $productImg);
         $this->productController->editService($product);
-        return redirect()->route('admin.show');
+        return redirect()->route('admin.show.product');
 
     }
 

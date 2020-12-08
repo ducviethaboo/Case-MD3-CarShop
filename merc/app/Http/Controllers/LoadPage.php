@@ -56,6 +56,7 @@ class LoadPage extends Controller
         return view('user.user-form-buy');
     }
 
+
     public function showFormAddByAdmin()
     {
         return view('admin.add');

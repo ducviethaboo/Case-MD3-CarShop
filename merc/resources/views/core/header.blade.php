@@ -20,9 +20,9 @@
                     </div>
                     <div class="menu">
                         <ul class="nav" id="nav">
-                            <li><a href="{{route('home')}}">Trang chủ</a></li>
-                            <li><a href="{{route('user.show')}}">Cửa hàng xe</a></li>
-                            <li><a href="{{route('user.testDriveRegister')}}">Đăng ký lái thử</a></li>
+                            <li><a style="font-size: 15px" href="{{route('home')}}">Trang chủ</a></li>
+                            <li><a style="font-size: 15px" href="{{route('user.show')}}">Cửa hàng xe</a></li>
+                            <li><a style="font-size: 15px" href="{{route('user.testDriveRegister')}}">Đăng ký lái thử</a></li>
                         </ul>
                         <div class="header-left" style="text-align: right; position: absolute">
                         </div>
@@ -49,7 +49,7 @@
                     </script>
                 </div>
             </div>
-            <div style="margin-top: 5px; margin-left: 1050px">
+            <div style="margin-top: 5px; margin-left: 1150px">
                 <table style="text-align: center">
                     <tr>
                         <td>
@@ -74,7 +74,7 @@
             <span class="navbar-text">
                     <a href="{{route('cart.index')}}">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i><span
-                            class="badge badge-secondary">{{ (session()->has('cart')) ? count(session()->get('cart')->items) : 0 }}</span></a>
+                            class="badge badge-secondary">{{ (session()->has('cart')) ? session()->get('cart')->totalQty : null }}</span></a>
             </span>
                         </td>
                     </tr>

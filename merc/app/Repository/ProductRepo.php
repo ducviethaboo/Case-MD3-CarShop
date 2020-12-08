@@ -11,7 +11,7 @@ class ProductRepo
 {
     public function getAllPaginate()
     {
-        return Product::paginate(4);
+        return Product::simplePaginate(4);
     }
 
     public function getAllByAdmin()

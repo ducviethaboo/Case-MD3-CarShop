@@ -143,7 +143,11 @@
                     <div class="col-md-8">
                         <div class="ibox">
                             <div class="ibox-title">
+                                @if($cart->totalQty)
                                 <span class="pull-right">(<strong>{{$cart->totalQty}}</strong>) Sản phẩm</span>
+                                @else
+                                <span class="pull-right">(<strong>0</strong>) Sản phẩm</span>
+                                @endif
                                 <h3><b>Sản phẩm trong giỏ hàng</b></h3>
                             </div>
                             <div class="ibox-content">
@@ -224,7 +228,7 @@
                                 <hr>
                                 <div class="m-t-sm">
                                     <div class="btn-group">
-                                        <a id="checkOut" href="#" class="btn btn-success btn-sm"><i class="fa fa-shopping-cart"></i>
+                                        <a id="checkOut" href="" class="btn btn-success btn-sm"><i class="fa fa-shopping-cart"></i>
                                             Checkout</a>
                                         <a href="{{route('home')}}" class="btn btn-white btn-sm"> Quay lại</a>
                                     </div>
@@ -240,7 +244,7 @@
                                 <span class="small">
                                        <table>
                         <tr>
-                            <td style="text-align: center; width: 30px" ; height=30px"><p class='fas fa-map-marker-alt'
+                            <td style="text-align: center; width: 30px"  height=30px"><p class='fas fa-map-marker-alt'
                                                                                           style='font-size:17px; color: black'></p></td>
                             <td style="text-align: left"><p
                                     style="color: black">Địa chỉ: 89 Bồ Đề, Long Biên, Hà Nội</p></td>

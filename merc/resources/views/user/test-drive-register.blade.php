@@ -6,7 +6,7 @@
             <form action="{{route('user.testdriver.register')}}" method="post">
                 @csrf
                 @if(session()->has('login'))
-                    <input name="userTest" type="hidden" value="{{session()->get('login')[0]}}">
+                    <input name="userTest" type="hidden" value="{{session()->get('login')[0][0]}}">
                 @endif
                 <div class="register-top-grid">
                     <h2>Đăng ký lái thử</h2>

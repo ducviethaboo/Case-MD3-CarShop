@@ -25,9 +25,15 @@ class LoginController extends Controller
         }
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'User'])) {
             $user = Auth::user();
-            $name = $user->name;
             $id = $user->id;
-            $request->session()->push('login', $id);
+            $name = $user->name;
+            $email = $user->email;
+            $info = [
+                $id,
+                $email,
+                $name
+            ];
+            $request->session()->push('login', $info);
             return view('user.index');
         }
         $request->session()->flash('login-fail', 'Tài khoản không tồn tại');

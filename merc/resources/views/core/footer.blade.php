@@ -12,47 +12,69 @@
 <div class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
-                    <table>
-                        <h2 style="color: white">Việt Hà Auto</h2>
-                        <br>
-                        <tr>
-                            <td style="text-align: center; width: 30px; height: 30px"><p class='fas fa-map-marker-alt' style='font-size:17px; color: white'></p></td>
-                            <td style="text-align: left"><p style="color: white">Địa chỉ: 89 Bồ Đề, Long Biên, Hà Nội</p></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center; height: 30px"><p class='fas fa-envelope-open' style='font-size:17px; color: white'></p></td>
-                            <td style="text-align: left"><p style="color: white">Email: ducviet300397@gmail.com</p></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center; height: 30px"> <p class='fas fa-mobile-alt' style='font-size:17px; color: white'></p></td>
-                            <td style="text-align: left"><p style="color: white">Điện thoại: 0906888666</p></td>
-                        </tr>
-                    </table>
+            <div class="col-md-5">
+                <table>
+                    <h2 style="color: white; font-size:50px">Việt Hà Auto</h2>
+                    <br>
+                    <tr>
+                        <td style="text-align: center; width: 30px; height: 30px"><p class='fas fa-map-marker-alt'
+                                                                                      style='font-size:17px; color: white'></p>
+                        </td>
+                        <td style="text-align: left"><p style="color: white;font-size: 20px">Địa chỉ: 89 Bồ Đề, Long Biên, Hà Nội</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; height: 30px"><p class='fas fa-envelope-open'
+                                                                        style='font-size:17px; color: white'></p></td>
+                        <td style="text-align: left"><p style="color: white;font-size: 20px">Email: ducviet300397@gmail.com</p></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; height: 30px"><p class='fas fa-mobile-alt'
+                                                                        style='font-size:17px; color: white'></p></td>
+                        <td style="text-align: left"><p style="color: white;font-size: 20px">Điện thoại: 0906888666</p></td>
+                    </tr>
+                </table>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <ul class="footer_box">
-                    <h4>Newsletter</h4>
                     <div class="footer_search">
-                        <form>
-                            <input type="text" value="Enter your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}">
-                            <input type="submit" value="Go">
-                        </form>
+                        <div class="logo ">
+                            <a href="{{route('home')}}"><img
+                                    src="{{asset('/images/home-page/merc.png')}}"
+                                    style="width: 150px"/></a>
+                        </div>
                     </div>
-                    <ul class="social">
-                        <li class="facebook"><a href="https://www.facebook.com/?stype=lo&jlou=AfcLZjqIfFjuJHGwsIsMs9dA14Uf8fJcxyyv7iFEHoohAtnAFUW7bPTmoYmF5qcMhnGIrnfCvQpyLD7YHYMCABFezc6QrpFSfYrsLjUY4GRCZg&smuh=23971&lh=Ac_xJ2fNDxpAqWFO6Uo"><span> </span></a></li>
-                        <li class="twitter"><a href="https://twitter.com/?lang=vi"><span> </span></a></li>
-                        <li class="instagram"><a href="https://www.instagram.com/"><span> </span></a></li>
-                        <li class="pinterest"><a href="#"><span> </span></a></li>
-                        <li class="youtube"><a href="https://www.youtube.com/"><span> </span></a></li>
-                    </ul>
-
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <ul class="footer_box">
+                    <div class="footer_search">
+                        <div class="logo ">
+                            <a href="{{route('home')}}"><img
+                                    src="{{asset('/images/home-page/amg.png')}}"
+                                    style="width: 200px"/></a>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+            <div class="col-md-1">
+                <ul class="footer_box">
+                    <div class="footer_search">
+                        <div class="logo ">
+                            <a href="{{route('home')}}"><img
+                                    src="{{asset('/images/home-page/maybach-logo.png')}}"
+                                    style="width: 230px"/></a>
+                        </div>
+                    </div>
                 </ul>
             </div>
         </div>
         <div class="row footer_bottom">
             <div class="copy">
-                <p>© Website Design by <a href="https://www.facebook.com/ducviet1997/" target="_blank">Đức Việt</a></p>
+                @if(session()->has('login'))
+                    <p>Đăng nhập bởi: <a style="color: #00AAF0" href="https://www.facebook.com/ducviet1997/" target="_blank">{{\Illuminate\Support\Facades\Auth::user()->name}}</a></p>
+                @endif
+
             </div>
         </div>
     </div>
