@@ -66,7 +66,7 @@
                             <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{route('admin.test-driver-list')}}">Đăng ký lái thử</a>
-                                    <a class="nav-link" href="">Đăng ký mua xe</a>
+                                    <a class="nav-link" href="{{route('admin.order')}}">Đăng ký mua xe</a>
                                     <a class="nav-link" href="{{route('admin.account')}}">Tài khoản</a>
                                 </nav>
                             </div>

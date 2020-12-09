@@ -143,14 +143,14 @@
                     <div class="col-md-8">
                         <div class="ibox">
                             <div class="ibox-title">
-                                @if($cart->totalQty)
+                                @if($cart->totalQty != null)
                                 <span class="pull-right">(<strong>{{$cart->totalQty}}</strong>) Sản phẩm</span>
                                 @else
                                 <span class="pull-right">(<strong>0</strong>) Sản phẩm</span>
                                 @endif
                                 <h3><b>Sản phẩm trong giỏ hàng</b></h3>
                             </div>
-                            <div class="ibox-content">
+                            <div style="box-shadow: 5px 10px 18px lightgrey" class="ibox-content">
                                 <div class="table-responsive">
                                     <table class="table shoping-cart-table">
                                         <th style="text-align: center !important;">Ảnh</th>
@@ -203,7 +203,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="ibox-content">
+                            <div style="box-shadow: 5px 10px 18px lightgrey" class="ibox-content">
                                 <button class="btn btn-white"><i class="fa fa-arrow-left"></i> <a style="color: black"
                                                                                                   class="btn"
                                                                                                   href="{{route('user.show')}}">Tiếp
@@ -217,7 +217,7 @@
                             <div class="ibox-title">
                                 <h3><b>Thanh toán</b></h3>
                             </div>
-                            <div class="ibox-content">
+                            <div style="box-shadow: 5px 10px 18px lightgrey" class="ibox-content">
                     <span>
                         Tổng tiền:
                     </span>
@@ -228,7 +228,7 @@
                                 <hr>
                                 <div class="m-t-sm">
                                     <div class="btn-group">
-                                        <a id="checkOut" href="" class="btn btn-success btn-sm"><i class="fa fa-shopping-cart"></i>
+                                        <a id="checkOut" href="{{route('user.checkout')}}" onclick="alert('Thông tin mua hàng đã được được xác nhận')" class="btn btn-success btn-sm"><i class="fa fa-shopping-cart"></i>
                                             Checkout</a>
                                         <a href="{{route('home')}}" class="btn btn-white btn-sm"> Quay lại</a>
                                     </div>
@@ -237,7 +237,7 @@
                         </div>
 
                         <div class="ibox">
-                            <div style="text-align: center" class="ibox-title">
+                            <div  style="text-align: center;box-shadow: 5px 10px 18px lightgrey" class="ibox-title">
                                 <h3><b>Việt Hà Auto</b></h3>
                             </div>
                             <div class="ibox-content text-center">

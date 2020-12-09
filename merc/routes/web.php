@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckOutController;
 use App\Http\Controllers\LoadPage;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TestDriverController;
@@ -22,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+
 Route::get('/', [UserController::class, 'showPageGuest'])->name('home');
 
 
@@ -33,20 +36,21 @@ Route::prefix('user')->group(function () {
     Route::middleware('auth')->get('/buy', [LoadPage::class, 'showFormBuy'])->name('user.buy.form');
     Route::get('/account', [AccountController::class, 'getAccountDetail'])->name('user.account.detail');
     Route::post('/testdriver', [RegisterController::class, 'testDriverRegister'])->name('user.testdriver.register');
+    Route::get('/register', [LoadPage::class, 'showPageUserRegister'])->name('user.register');
+    Route::post('/', [AccountController::class, 'registerAccount'])->name('user.registerPost');
 
     //addCart
     Route::middleware('auth')->get('/cart', [CartController::class, 'index'])->name('cart.index');
     Route::middleware('auth')->get('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('cart.addToCart');
     Route::get('/remove-to-cart/{id}', [CartController::class, 'removeProductIntoCart'])->name('cart.removeProductIntoCart');
     Route::post('/update-to-cart/{id}', [CartController::class, 'updateProductIntoCart'])->name('cart.updateProductIntoCart');
+    Route::get('/checkOut',[CheckOutController::class,'checkOut'])->name('user.checkout');
 });
 
 
 //login
 Route::get('/login', [LoadPage::class, 'showPageUserLogin'])->name('login');
 Route::post('/loginCheck', [LoginController::class, 'checkLogin'])->name('login.check');
-Route::get('/register', [LoadPage::class, 'showPageUserRegister'])->name('user.register');
-Route::post('/', [AccountController::class, 'registerAccount'])->name('user.registerPost');
 Route::post('/', [LoginController::class, 'logout'])->name('logout');
 
 
@@ -74,8 +78,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/test-drivers', [TestDriverController::class, 'getAll'])->name('admin.test-driver-list');
     Route::get('{id}/edit-test-drivers', [TestDriverController::class, 'getAllById'])->name('admin.edit-test-driver');
     Route::post('/edit-test-drivers', [TestDriverController::class, 'editStatusTest'])->name('admin.edit-status-test-driver');
+
+    //Order
+    Route::get('/order', [OrderController::class,'getAllOrderByAdmin'])->name('admin.order');
 });
-
-
-
-

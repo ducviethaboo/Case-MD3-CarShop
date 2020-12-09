@@ -9,9 +9,15 @@ use App\Repository\ProductRepo;
 class ProductService
 {
     protected $productService;
+
     public function __construct(ProductRepo $productRepo)
     {
         $this->productService = $productRepo;
+    }
+
+    public function getAllProductNotPaginate()
+    {
+        return $this->productService->getAllNotPagiante();
     }
 
     public function getAllProductService()

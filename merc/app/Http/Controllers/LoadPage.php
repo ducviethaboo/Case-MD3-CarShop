@@ -47,7 +47,7 @@ class LoadPage extends Controller
 
     public function PageRegisterTestDriverLoad()
     {
-        $products = $this->pageController->getAllProductService();
+        $products = $this->pageController->getAllProductNotPaginate();
         return view('user.test-drive-register', compact('products'));
     }
 
@@ -56,11 +56,9 @@ class LoadPage extends Controller
         return view('user.user-form-buy');
     }
 
-
     public function showFormAddByAdmin()
     {
         return view('admin.add');
-
     }
 
 

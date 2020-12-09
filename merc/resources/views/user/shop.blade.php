@@ -24,7 +24,6 @@
         }
 </style>
     <div class="container py-5">
-        {{--        <p> Kết quả tìm kiếm: {{$key}}</p>--}}
         <div class="row pb-5 mb-4">
             @if(session()->has('not-found'))
                 <p style="color: red">{{session()->get('not-found')}}</p>

@@ -14,6 +14,11 @@ class ProductRepo
         return Product::simplePaginate(4);
     }
 
+    public function getAllNotPagiante()
+    {
+        return Product::all();
+    }
+
     public function getAllByAdmin()
     {
         return Product::all();
@@ -40,13 +45,5 @@ class ProductRepo
         $product->productDesc = $products->getProductDesc();
         $product->productImg = $products->getProductImg();
         $product->save();
-    }
-
-    public function add($data)
-    {
-//        $product = new Product();
-//        $product->fill($data);
-//        $product->productImg = 'images/user-img/' . $data['productImg'];
-//        $product->save();
     }
 }

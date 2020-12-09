@@ -111,8 +111,13 @@
                     <h2> Thông tin sản phẩm: </h2>
                     <p class="m_10">{{$product->productDesc}}</p>
                     <div class="btn_form">
-                        <a class="add-to-cart" onclick="alert('Thêm sản phẩm vào giỏ hàng thành công')"
-                           href="{{ route('cart.addToCart', $product->id) }}">+ Thêm vào giỏ hàng</a>
+                        @if(session()->has('login'))
+                            <a class="add-to-cart" onclick="alert('Thêm sản phẩm vào giỏ hàng thành công')"
+                               href="{{ route('cart.addToCart', $product->id) }}">+ Thêm vào giỏ hàng</a>
+                        @else
+                            <a class="add-to-cart"
+                               href="{{ route('cart.addToCart', $product->id) }}">+ Thêm vào giỏ hàng</a>
+                        @endif
                     </div>
                     <div class="clear"></div>
                 </div>
