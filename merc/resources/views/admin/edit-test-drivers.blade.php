@@ -1,5 +1,8 @@
 @extends('admin.core.master')
 @section('content')
+    @if(session()->has('alert'))
+        <section class='alert alert-success'>{{session()->get('alert')}}</section>
+    @endif
 <form action="{{route('admin.edit-status-test-driver')}}" method="post" class="form-horizontal" role="form">
     @csrf
     <div class="container mt-5">

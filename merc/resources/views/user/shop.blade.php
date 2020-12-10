@@ -5,7 +5,8 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>body {
+    <style>
+        body {
             min-height: 100vh;
             background: white;
         }
@@ -22,7 +23,7 @@
             transition: all 0.3s;
             font-size: 0.9rem;
         }
-</style>
+    </style>
     <div class="container py-5">
         <div class="row pb-5 mb-4">
             @if(session()->has('not-found'))
@@ -50,7 +51,7 @@
         </div>
         @if(count($products) > 1)
             <div style="text-align: center">
-            <p>{{ $products->links() }}</p>
+                <p>{{ $products->links() }}</p>
             </div>
         @endif
     </div>

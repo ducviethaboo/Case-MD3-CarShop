@@ -52,6 +52,13 @@
                             <textarea name="productDesc" id="" cols="63" rows="10"></textarea>
                         </div>
                     </div>
+                    <div class="error-message">
+                        @if ($errors->any())
+                            @foreach($errors->all() as $nameError)
+                                <p style="color:red">{{ $nameError }}</p>
+                            @endforeach
+                        @endif
+                    </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label"></label>
                         <div class="col-md-8">
@@ -59,14 +66,6 @@
                             <a class="btn btn-danger" href="{{route('admin.show')}}">Huỷ bỏ</a>
                             <span></span>
                         </div>
-                    </div>
-
-                    <div class="error-message">
-                        @if ($errors->any())
-                            @foreach($errors->all() as $nameError)
-                                <p style="color:red">{{ $nameError }}</p>
-                            @endforeach
-                        @endif
                     </div>
                 </div>
             </div>

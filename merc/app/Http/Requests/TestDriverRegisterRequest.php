@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProductRequest extends FormRequest
+class TestDriverRegisterRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,16 +24,17 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'productName' => 'required',
-            'productPrice' => 'required',
+            //
+            'testDate' => 'required|after:yesterday'
         ];
     }
 
     public function messages()
     {
         return [
-            'productName.required' => 'Tên sản phẩm không được để trống',
-            'productPrice.required' => 'Giá sản phẩm không được để trống',
+            'testDate.required' => 'Vui lòng nhập ngày đăng ký',
+            'testDate.after' => 'Ngày đăng ký không hợp lệ'
         ];
+
     }
 }

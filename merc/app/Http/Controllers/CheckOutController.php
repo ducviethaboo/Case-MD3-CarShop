@@ -14,13 +14,12 @@ class CheckOutController extends Controller
     public function checkOut(Request $request)
     {
 
-        //addToOrder
-        $cart = $request->session()->get('login');
+//        addToOrder
+        $email = $request->session()->get('login');
         $order = new Orders();
-        $order->userEmail = $cart[0][1];
+        $order->userEmail = $email[0][1];
         $order->orderDate = Carbon::now()->day . '/' . Carbon::now()->month . '/' . Carbon::now()->year;
         $order->save();
-//
 
         //addToOrderDetail
         $cart = $request->session()->get('cart');
@@ -29,10 +28,12 @@ class CheckOutController extends Controller
         $orderDetails = new OrderDetails();
         $orderDetails->orderId =  $orderId[0]->id;
         $orderDetails->totalPrice = $cart->totalPrice;
-        $orderDetails->totalPrice = $cart->totalPrice;
+        $orderDetails->priceEach = $value['item']->productPrice;
         $orderDetails->productId = $value['item']->id;
         $orderDetails->quantityOrder = $value['qty'];
         $orderDetails->save();
         }
+        $alert = 'Cảm ơn quý khách, thông tin về đơn hàng sẽ được gửi về Email của quý khách. Xin cảm ơn!!';
+        return redirect()->route('cart.index')->with('alert', $alert);
     }
 }

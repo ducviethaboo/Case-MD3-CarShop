@@ -138,15 +138,18 @@
         <div class="container">
             <br>
             <br>
+            @if(session()->has('alert'))
+                <section class='alert alert-success'>{{session()->get('alert')}}</section>
+            @endif
             <div class="wrapper wrapper-content animated fadeInRight">
                 <div class="row">
                     <div class="col-md-8">
                         <div class="ibox">
                             <div class="ibox-title">
                                 @if($cart->totalQty != null)
-                                <span class="pull-right">(<strong>{{$cart->totalQty}}</strong>) Sản phẩm</span>
+                                    <span class="pull-right">(<strong>{{$cart->totalQty}}</strong>) Sản phẩm</span>
                                 @else
-                                <span class="pull-right">(<strong>0</strong>) Sản phẩm</span>
+                                    <span class="pull-right">(<strong>0</strong>) Sản phẩm</span>
                                 @endif
                                 <h3><b>Sản phẩm trong giỏ hàng</b></h3>
                             </div>
@@ -164,12 +167,14 @@
                                                 <tr>
                                                     <td style="width: 200px">
                                                         <div>
-                                                            <img style="width: 100%" src='{{asset($product['item']->productImg)}}' alt="">
+                                                            <img style="width: 100%"
+                                                                 src='{{asset($product['item']->productImg)}}' alt="">
                                                         </div>
                                                     </td>
                                                     <td class="desc">
                                                         <h3>
-                                                            <a href="{{route('user.showByid',$product['item']->id )}}" class="text-navy">
+                                                            <a href="{{route('user.showByid',$product['item']->id )}}"
+                                                               class="text-navy">
                                                                 Mercedes-Benz {{$product['item']->productName}}
                                                             </a>
                                                         </h3>
@@ -179,8 +184,9 @@
                                                             <dd>Loại: {{$product['item']->productType}}</dd>
                                                         </dl>
                                                         <div class="m-t-sm">
-                                                            <a style="color: red" href="{{ route('cart.removeProductIntoCart', $product['item']->id) }}
-                                                                " class="text-muted"><i class="fa fa-trash"></i>
+                                                            <a style="color: red"
+                                                               href="{{ route('cart.removeProductIntoCart', $product['item']->id) }}
+                                                                   " class="text-muted"><i class="fa fa-trash"></i>
                                                                 Xoá sản phẩm</a>
                                                         </div>
                                                     </td>
@@ -228,7 +234,9 @@
                                 <hr>
                                 <div class="m-t-sm">
                                     <div class="btn-group">
-                                        <a id="checkOut" href="{{route('user.checkout')}}" onclick="alert('Thông tin mua hàng đã được được xác nhận')" class="btn btn-success btn-sm"><i class="fa fa-shopping-cart"></i>
+                                        <a id="checkOut" href="{{route('user.checkout')}}"
+                                           onclick="alert('Thông tin mua hàng đã được được xác nhận')"
+                                           class="btn btn-success btn-sm"><i class="fa fa-shopping-cart"></i>
                                             Checkout</a>
                                         <a href="{{route('home')}}" class="btn btn-white btn-sm"> Quay lại</a>
                                     </div>
@@ -237,15 +245,15 @@
                         </div>
 
                         <div class="ibox">
-                            <div  style="text-align: center;box-shadow: 5px 10px 18px lightgrey" class="ibox-title">
+                            <div style="text-align: center;box-shadow: 5px 10px 18px lightgrey" class="ibox-title">
                                 <h3><b>Việt Hà Auto</b></h3>
                             </div>
                             <div class="ibox-content text-center">
                                 <span class="small">
                                        <table>
                         <tr>
-                            <td style="text-align: center; width: 30px"  height=30px"><p class='fas fa-map-marker-alt'
-                                                                                          style='font-size:17px; color: black'></p></td>
+                            <td style="text-align: center; width: 30px" height=30px"><p class='fas fa-map-marker-alt'
+                                                                                        style='font-size:17px; color: black'></p></td>
                             <td style="text-align: left"><p
                                     style="color: black">Địa chỉ: 89 Bồ Đề, Long Biên, Hà Nội</p></td>
                         </tr>

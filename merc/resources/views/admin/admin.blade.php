@@ -4,6 +4,11 @@
         <div class="card-header">
             <i class="fas fa-table mr-1"></i>
             Danh sách xe trong kho
+            <br>
+            <br>
+            @if(session('alert'))
+                 <section class='alert alert-success'>{{session('alert')}}</section>
+            @endif
         </div>
         <div class="card-body">
             <div class="table-responsive">

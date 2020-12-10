@@ -32,6 +32,7 @@ class TestDriverController extends Controller
         $id = $request->id;
         $status = $request->status;
         $this->testDriver->updateStatus($id, $status);
-        return redirect()->route('admin.test-driver-list');
+        $alert = "Cập nhật thành công";
+        return redirect()->route('admin.test-driver-list')->with('alert', $alert);
     }
 }

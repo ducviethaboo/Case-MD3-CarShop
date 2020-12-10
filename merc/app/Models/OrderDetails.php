@@ -13,6 +13,7 @@ class OrderDetails extends Model
         'quantityOrder',
         'totalPrice',
         'productId',
-        'orderId'
+        'orderId',
+        'priceEach'
     ];
 }

@@ -4,13 +4,12 @@
 namespace App\Http\Controllers;
 
 
-use App\Http\Requests\ProductRequest;
+use App\Http\Requests\AddProductRequest;
 use App\Models\Product;
 use App\Models\ProductModel;
 use App\Service\ProductService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -46,7 +45,8 @@ class ProductController extends Controller
     public function delete($id)
     {
         $this->productController->deleteByIdService($id);
-        return redirect()->route('admin.show');
+        $alert='Xoá sản phẩm thành công!';
+        return redirect()->route('admin.show.product')->with('alert', $alert);
     }
 
     public function showById($id)
@@ -61,7 +61,7 @@ class ProductController extends Controller
         return view('user.productdetail', compact('product'));
     }
 
-    public function edit(ProductRequest $request)
+    public function edit(AddProductRequest $request)
     {
         $productId = $request->productId;
         $productName = $request->productName;
@@ -74,11 +74,12 @@ class ProductController extends Controller
         $productImg = $imageName;
         $product = new ProductModel($productId, $productName, $productType, $productColor, $productPrice, $productDesc, $productImg);
         $this->productController->editService($product);
-        return redirect()->route('admin.show.product');
+        $alert='Sửa thông tin sản phẩm thành công!';
+        return redirect()->route('admin.show.product')->with('alert', $alert);
 
     }
 
-    public function add(ProductRequest $request)
+    public function add(AddProductRequest $request)
     {
         $product = new Product();
         $product->fill($request->all());
@@ -86,7 +87,8 @@ class ProductController extends Controller
         $request->productImg->move(public_path('images/user-img/'), $imageName);
         $product->productImg = $imageName;
         $product->save();
-        return redirect()->route('admin.show.product');
+        $alert='Thêm sản phẩm thành công!';
+        return redirect()->route('admin.show.product')->with('alert', $alert);
     }
 
 }

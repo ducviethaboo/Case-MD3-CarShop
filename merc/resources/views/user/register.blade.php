@@ -275,7 +275,7 @@
                     <form method="post" action="{{route('user.registerPost')}}">
                         @csrf
                     <div class="form-label-group">
-                            <input type="text" id="inputUserame" class="form-control" placeholder="Họ và tên" name="name" required autofocus>
+                            <input type="text" id="inputUserame" class="form-control" placeholder="Họ và tên" name="name">
                             <label for="inputUserame">Họ và tên</label>
                         </div>
 
@@ -287,15 +287,21 @@
                         <hr>
 
                         <div class="form-label-group">
-                            <input type="text" id="inputPassword" class="form-control" placeholder="Số điện thoại" name="phone" required>
+                            <input type="text" id="inputPassword" class="form-control" placeholder="Số điện thoại" name="phone">
                             <label for="inputPassword">Số điện thoại</label>
                         </div>
 
                         <div class="form-label-group">
-                            <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Mật khẩu" name="password" required>
+                            <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Mật khẩu" name="password">
                             <label for="inputConfirmPassword">Mật khẩu</label>
                         </div>
-
+                        <div class="error-message">
+                            @if ($errors->any())
+                                @foreach($errors->all() as $nameError)
+                                    <p style="color:red">{{ $nameError }}</p>
+                                @endforeach
+                            @endif
+                        </div>
                         <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Đăng ký tài khoản</button>
                         <a class="d-block text-center mt-2 small" href="{{route('login')}}">Đăng nhập</a>
                         <a class="d-block text-center mt-2 small" href="{{route('home')}}">Quay lại</a>

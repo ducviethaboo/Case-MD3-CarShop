@@ -14,7 +14,7 @@ class OrderRepo
             ->join('orders', 'orders.userEmail', '=', 'users.email')
             ->join('orderdetails', 'orderdetails.orderId', '=', 'orders.id')
             ->join('products', 'products.id', '=', 'orderdetails.productId')
-            ->select('users.name','orders.orderDate', 'orders.userEmail', 'orderdetails.quantityOrder', 'orderdetails.totalPrice', 'products.productName')
+            ->select('users.name','orders.orderDate', 'orderdetails.orderId', 'orders.userEmail', 'orderdetails.quantityOrder', 'orderdetails.totalPrice','orderdetails.priceEach', 'products.productName')
             ->get();
     }
 }
